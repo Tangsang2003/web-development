@@ -16,3 +16,6 @@ This repository contains all the resources and mini projects I've completed whil
 ### Introduction to CSS
 - [Basic internal CSS](./CSS/Introduction-to-CSS/styling-hr/my-site.html) `Basic CSS syntax, Styling an <hr> element.`
 - [Pseudoclasses](./CSS/Introduction-to-CSS/pseudoclasses/pseudoclasses.html) `Pseudoclasses in CSS. Example of ':hover'.`
+
+### Intermediate CSS
+- [Project - Personal Site](./CSS/CSS-My%20Site/)

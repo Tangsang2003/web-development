@@ -21,3 +21,6 @@ This repository contains all the resources and mini projects I've completed whil
 - [Project - Personal Site](./CSS/CSS-My%20Site/)
 - [Positioning -I](./CSS/Intermediate-CSS/static-relative-positioning.html) `Static and Relative Positioning.`
 - [Positioning -II](./CSS/Intermediate-CSS/absolute-positioning.html) `Absolute Positioning.`
+
+## Bootstrap
+- [TinDog](./Bootstrap/TinDog/) `A RESPONSIVE Frontend project (Tinder for Dogs lol).`

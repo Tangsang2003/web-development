@@ -3,14 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <title>Tangsang Chongbang</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="icon" href="./sh-icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/sh-icon.png">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sacramento&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div>
+    <!-- So, the content lies within the height and width of the div. Padding is like extra space between the border and the content.
+     Background color and image applies inside padding as well. But, margin is the space between two elements / divs. -->
+    <div class="top-container">
+        <img class='top-cloud' src="images/cloud.png" alt="cloud-img">
         <h1>I'm Tangsang.</h1>
-        <p>a programmer.</p>
+        <h2>a <span class="pro">pro</span>grammer.</h2>
+        <img class="bottom-cloud" src="images/cloud.png" alt="cloud-img">
+        <img src="images/mountain.png" alt="mountain-img">
     </div>
-    
+    <div class="middle-container">
+        <div class="profile">
+          <!-- <img class='profile-picture' src="images/profile-picture-2-circular.png" alt="tangsang-chongbang-cartoonized-profile-picture"> -->
+           <div class="profile-picture-image-container"></div>
+          <h2>Hello.</h2>
+          <p class="intro">I am an aspiring Machine Learning/AI enthusiast and a Web Developer. I enjoy working on personal projects and continuously learning new skills. 
+            I’m excited to connect with like-minded individuals and explore new opportunities in the tech world. </p>
+        </div>
+        <hr>
+        <div class="skills">
+          <h2>My Skills.</h2>
+          <div class="skill-row">
+            <!-- <img class='ml-img' src="./images/machine-learning.png" alt="machine-learning-image"> -->
+             <img class='ml-img' src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWNvOWg0OHpyM3diaWJ1bnJ6OWN5bnhmY2ZhemxvaTZ1ODU0cnR2eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qgQUggAC3Pfv687qPC/giphy.webp" alt="maching-learning-image">
+            <h3>Machine Learning</h3>
+            <p class="ml-desc">
+                I'm experienced in <strong>Python</strong> and libraries like <strong>Scikit-learn, TensorFlow, and Pandas.</strong> I’ve worked on several projects related to data preprocessing and building basic Neural Networks and Models. I'm familiar with various supervised, unsupervised and reinforcement learning algorithms as well. I've also worked on <strong>NLP</strong> projects like extraction of MCQs from texts, summarization of medical texts and Nepali speech recognition.
+            </p>
+          </div>
+          <div class="skill-row">
+            <!-- <img class="web-dev-img" src="./images/web-development.png" alt="web-development-image"> -->
+             <img class="web-dev-img" src="https://www.thoughtwin.com/assets/img/mernstack-img.gif" alt="web-development-image">
+            <h3>Web Development</h3>
+            <p class="web-dev-desc">On the frontend side, I’m comfortable with <strong>HTML, CSS,</strong> and <strong>JavaScript.</strong> I’m also exploring <strong>React</strong> and working with tools like <strong>SASS</strong> and <strong>CSS Grid</strong>. On the backend side, I've been getting familiar with <strong>Node.js</strong> and <strong>Express.js</strong> for full-stack applications. I am also familiar with <strong>MongoDB</strong> and <strong>MySQL</strong>. I am experienced in building full-fledged <strong>Flask</strong> applications as well.</p>
+          </div>
+          <div class="skill-row">
+            <!-- <img class="dsa-img" src="./images/dsa.png" alt=""> -->
+             <img class='dsa-img' src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTZsMnBzaHhmdDRmdW0xempxeXJ6eW5mZHQ2cXpodnhwNmF1aGdvdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SWoSkN6DxTszqIKEqv/giphy.webp" alt="dsa-image">
+            <h3>Data Structures and Algorithms</h3>
+            <p class="dsa-desc">I’ve been improving my problem-solving skills through Data Structures and Algorithms (DSA), and I’m experienced in <strong>C</strong> and <strong>C++</strong>. I’m also comfortable using <strong>Git</strong> for version control.</p>
+          </div>
+        </div>
+        <hr>
+        <div class="contact-me">
+          <h2>Get In Touch</h2>
+          <h3>Let's start a conversation</h3>
+          <p class="contact-message">I’d love to hear from you! Whether you have a project in mind, a question to ask, or simply want to reach out, please feel free to drop a message. I’ll get back to you as soon as I can. Looking forward to connecting!</p>
+          <a class="btn" href="mailto:077bei047.tangsang@pcampus.edu.np">CONTACT ME</a>
+        </div>
+    </div>
+      
+      
+    <div class="bottom-container">
+        <a class="footer-link" href="https://www.linkedin.com/in/tangsang-chongbang-8713742a2/">LinkedIn</a>
+        <a class="footer-link" href="https://www.instagram.com/iamtangsang/">Instagram</a>
+        <a class="footer-link" href="https://www.github.com/tangsang2003/">GitHub</a>
+        <p class="copyright">© Tangsang Chongbang.</p>
+    </div> 
+
 </body>
 </html>

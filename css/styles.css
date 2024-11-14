@@ -147,7 +147,7 @@ p {
 .profile-picture-image-container {
     width: 250px;
     height: 250px;
-    background-image: url('./../images/profile-picture-4-circular.png'); /* Default image */
+    background-image: url('../images/profile-picture-4-circular.png'); /* Default image */
     background-size: cover;
     background-position: center;
     transition: background-image 0.3s ease-in-out;
@@ -155,7 +155,7 @@ p {
   }
   
 .profile-picture-image-container:hover {
-background-image: url('./../images/profile-picture-4-circular.png'); /* Image on hover */
+background-image: url('../images/profile-picture-4-circular.png'); /* Image on hover */
 }
 
 .skill-row {

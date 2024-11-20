@@ -1,4 +1,4 @@
-# Web Development Bootcamp
+# Web Development Bootcamp 🌐
 This repository contains all the resources and mini projects I've completed while learning about web development.
 
 ## HTML
@@ -24,3 +24,10 @@ This repository contains all the resources and mini projects I've completed whil
 
 ## Bootstrap
 - [TinDog](./Bootstrap/TinDog/) `A RESPONSIVE Frontend project (Tinder for Dogs lol).`
+
+## JavaScript 
+### Introduction to JavaScript
+- [Hello World!](./JavaScript/Introduction%20to%20JavaScript/hello.js) `alert('Hello World');`
+- [Data Types](./JavaScript/Introduction%20to%20JavaScript/data_types.js) `Numbers, Strings, Boolean.`
+- [Variables](.//JavaScript/Introduction%20to%20JavaScript/variables_1.js) `What is your name? + introduction of keyword 'prompt'.`
+- [Swap Numbers](./JavaScript/Introduction%20to%20JavaScript/swap_numbers_variables_exercise.js) `JavaScript Code to swap two numbers between variables without declaring a third variable.`

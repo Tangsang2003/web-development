@@ -35,6 +35,17 @@ This repository contains all the resources and mini projects I've completed whil
 - [Twitter Character Count](./JavaScript/Introduction%20to%20JavaScript/characterCount.js) `Counting Characters with length function.`
 - [Uppercase and Lowercase](./JavaScript/Introduction%20to%20JavaScript/uppercase_lowercase.js) `toUpperCase() and toLowerCase().`
 - [Dog to Human Age Converter](./JavaScript/Introduction%20to%20JavaScript/dogAge_toHumanAge.js) `How old is your Dog?`
-- [Karel Robot Chess Pattern.](./JavaScript/Introduction%20to%20JavaScript/karel_robot.js) `Introduction to Custom Functions.`
+- [Karel Robot Chess Pattern](./JavaScript/Introduction%20to%20JavaScript/karel_robot.js) `Introduction to Custom Functions.`
 - [Get x bottles of Milk.](./JavaScript/Introduction%20to%20JavaScript/buy_milk.js) `Functions with Parameters and Math.floor() for rounding down a number.`
 - [BMI Calculator](./JavaScript/Introduction%20to%20JavaScript/bmi_calculator.js) `Practice for functions.`
+
+### 3.2 Intermediate JavaScript
+- [Random Number](./JavaScript/Intermediate%20JavaScript/random_number.js) `Math.random() and Math.floor()`.
+- [If Statements](./JavaScript/Intermediate%20JavaScript/if_statements.js) `'===' is different than '=='. ` `'===' also checks if the datatype is same or not.`
+- [Leap Year Challenge.](./JavaScript/Intermediate%20JavaScript/leap_year.js)
+- [Arrays](./JavaScript/Intermediate%20JavaScript/guest_list.js) `array_name.includes(varabile_name) to check if the variable exists in the array or not.`
+- [FizzBuzz](./JavaScript/Intermediate%20JavaScript/fizzbuzz.js) `A fun game. Usage of conditionals and operators.`
+- [FizzBuzz using While Loop.](./JavaScript/Intermediate%20JavaScript/while_fizzbuzz.js)
+- [99 Bottles of Beer on the Wall.](./JavaScript/Intermediate%20JavaScript/99_bottles_of_beer.js)
+- [FizzBuzz using For loop.](./JavaScript/Intermediate%20JavaScript/for_fizzbuzz.js) `Use while loop to check for state, and for loop to iterate.`
+- [Fibonacci Sequence Generator.](./JavaScript/Intermediate%20JavaScript/fibonacci.js)

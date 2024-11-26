@@ -62,4 +62,11 @@ This repository contains all the resources and mini projects I've completed whil
 ### 3.4 Boss Level Challenge
 - [A Dice Game using the concept learned in Section 3.3](./JavaScript/Dice%20Game/)
 
+### 3.5 Advanced JavaScript and DOM manipulation
+- [Calculator using higher order functions.](./JavaScript/Drum%20Kit/calculator.js)
+- [Drum Kit.](./JavaScript/Drum%20Kit/) 
+  - A virtual drum set. Using the concept of `addEventListener`, `higher order functions`, `passing functions as parameters`, `playing sounds on website, etc.`
+- [An example of defining JavaScript Objects in a simple way.](./JavaScript/Drum%20Kit/jSObjects.js)
+- [Constructor Function and creating JavaScript objects using Constructor Function.](./JavaScript/Drum%20Kit/constructor_function.js) `It is important to note that constructor function should be defined with capital letter in the first word.`
+- We can create a function for objects as well.
   

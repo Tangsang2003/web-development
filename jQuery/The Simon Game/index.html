@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Simon</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <button id="help-button">Help?</button>
+    <h1 id="level-title">Press any Keyboard Key to Start</h1>
+    <div id="help-modal">
+      <div id="help-content">
+        <h2> How to play the Simon Game? </h2>
+        <ol type="1">
+          <li> Watch the sequence of colors.</li>
+          <li> Repeat the sequence by clicking the buttons.</li>
+          <li> The sequence gets longer with each level.</li>
+          <li> If you get it wrong, the game is over! But you can restart!</li>
+        </ol>
+        <button id="close-button">Close</button>
+      </div>
+    </div>
+    <div class="container">
+      <div lass="row">
+        <div type="button" id="green" class="btn green"></div>
+
+        <div type="button" id="red" class="btn red"></div>
+      </div>
+
+      <div class="row">
+        <div type="button" id="yellow" class="btn yellow"></div>
+        <div type="button" id="blue" class="btn blue"></div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="game.js"></script>
+  </body>
+</html>

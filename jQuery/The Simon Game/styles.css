@@ -1,0 +1,137 @@
+body {
+  text-align: center;
+  background-color: #011F3F;
+}
+
+#level-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+  margin: 5% 5% 2%;
+  color: #FEF2BF;
+}
+
+.container {
+  display: block;
+  width: 50%;
+  margin: auto;
+
+}
+
+.btn {
+  margin: 25px;
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border: 10px solid black;
+  border-radius: 20%;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}
+
+#help-button {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.25rem;
+}
+
+#help-button:hover {
+  background-color: #45a049;
+}
+
+/* Help Modal */
+#help-modal {
+  position: fixed; /* Fixed position relative to the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  backdrop-filter: blur(8px); /* Apply blur effect to everything behind the modal */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  display: none; /* Initially hidden */
+  overflow: hidden;
+}
+
+/* Help content inside the modal */
+#help-content {
+  background-color: white;
+  padding: 50px;
+  border-radius: 10px;
+  text-align: center;
+  width: 80%;
+  max-width: 800px;
+  font-family: 'Press Start 2P', cursive;
+  line-height: 2rem;
+  font-size: 1.1rem;
+  text-align: left;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Optional: adds shadow around modal */
+  transform: scale(1); /* Modal content will be centered */
+  transition: transform 0.3s ease-out; /* Smooth scaling animation */
+}
+
+#help-modal.show {
+  display: flex; /* Show the modal when .show is added */
+  animation: fadeIn 0.5s ease-out; /* Fade-in animation for modal */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+#close-button {
+  /* margin-top: 80px; */
+  padding: 10px 15px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  /* position: relative; */
+  margin: auto;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.25rem;
+  position: absolute;
+  right: 30px;
+  bottom: 10px;
+}

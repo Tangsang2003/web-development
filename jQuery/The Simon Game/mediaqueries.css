@@ -1,0 +1,156 @@
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+    }
+    .btn {
+      width: 150px;
+      height: 150px;
+    }
+  
+    #help-button {
+        position: static;
+      font-size: 16px;
+      padding: 8px 16px;
+      margin: 5% 5% 0%;
+    }
+  
+    #level-title {
+      font-size: 28px;
+    }
+  
+    #help-content {
+      width: 70%;
+    }
+  
+    #help-content h2 {
+      font-size: 20px;
+    }
+  
+    #help-content ol {
+      font-size: 14px;
+    }
+  
+    #close-button {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  }
+  
+  /* Mobile Devices (375px - 767px) */
+  @media (max-width: 767px) {
+    .container {
+        width: 90%;
+    }
+    .btn {
+      width: 150px;
+      height: 150px;
+      margin: 5px;
+    }
+  
+    #help-button {
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+  
+    #level-title {
+      font-size: 2rem;
+    }
+  
+    #help-content {
+      width: 80%;
+      padding: 10px;
+    }
+  
+    #help-content h2 {
+      font-size: 18px;
+    }
+  
+    #help-content ol {
+      font-size: 12px;
+    }
+  
+    #close-button {
+      font-size: 12px;
+      padding: 6px 10px;
+    }
+  }
+  
+  /* Small Mobile Devices (up to 374px) */
+  @media (max-width: 400px) {
+    body {
+        margin-top: 50vh;
+    }
+    .btn {
+      width: 200px;
+      height: 200px;
+      margin: 5px;
+    }
+    .container {
+        max-width: 90%;
+    }
+  
+    #help-button {
+      font-size: 2rem;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+    }
+  
+    #level-title {
+      font-size: 2.5rem;
+    }
+
+    .game-heading {
+        font-size: 3rem;
+    }
+
+  
+    #help-content {
+        text-align: left;
+      width: 90%;
+      padding: 2rem;
+      
+    }
+  
+    #help-content h2 {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 20px;
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+  
+    #help-content ol {
+      font-size: 1.5rem;
+      width: 80%;
+      margin: auto;
+    }
+  
+    #close-button {
+        font-size: 2rem;
+        padding: 10px 20px;
+        display: flex;
+        position: static;
+        align-self: right;
+    }
+  }
+  
+  /* Landscape Mode for Mobile Devices */
+  @media (max-width: 767px) and (orientation: landscape) {
+    .btn {
+      width: 150px;
+      height: 150px;
+    }
+    .container {
+        width: 90%;
+    }
+  
+    #help-button {
+      font-size: 1rem;
+      padding: 5px 10px;
+    }
+  
+    #level-title {
+      font-size: 18px;
+    }
+  }

@@ -111,6 +111,7 @@ This repository contains all the resources and mini projects I've completed whil
 - Created the simon game, which is a memory game for remembering sequences.
 - Changed the implementation. In the bootcamp, only the latest button is given to remember at each new level, but I implemented in such a way that the whole sequence is given at each level.
 - Have used different jQuery concepts. 
-- Also, added help section and new sounds.
+- Also, added `help section` and `new sounds`.
+- Also, made the game mobile friendly.
 - The whole game can be found [here](./jQuery/The%20Simon%20Game/).
 

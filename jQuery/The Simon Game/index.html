@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <title>Simon</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mediaqueries.css">
     <link
       href="https://fonts.googleapis.com/css?family=Press+Start+2P"
       rel="stylesheet"
@@ -11,8 +12,9 @@
   </head>
 
   <body>
+    <h1 class="game-heading"> The Simon Game.</h1>
     <button id="help-button">Help?</button>
-    <h1 id="level-title">Press any Keyboard Key to Start</h1>
+    <h1 id="level-title">Press any Key to Start!</h1>
     <div id="help-modal">
       <div id="help-content">
         <h2> How to play the Simon Game? </h2>
@@ -26,7 +28,7 @@
       </div>
     </div>
     <div class="container">
-      <div lass="row">
+      <div class="row">
         <div type="button" id="green" class="btn green"></div>
 
         <div type="button" id="red" class="btn red"></div>
@@ -44,5 +46,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="game.js"></script>
+
+    <footer>Copyright © 2024 Tangsang Chongbang. All Rights Reserved.</footer>
   </body>
 </html>

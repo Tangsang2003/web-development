@@ -18,16 +18,16 @@ function animatePress(currentColor) {
 
 let canClick = false;
 function showPattern() {
-    canClick = false;
+  canClick = false;
   for (let i = 0; i < gamePattern.length; i++) {
-    setTimeout(function() {
-        $("#" + gamePattern[i])
-      .fadeOut("fast")
-      .fadeIn("fast");
-    playSound(gamePattern[i]);
-    if (i == gamePattern.length - 1) {
+    setTimeout(function () {
+      $("#" + gamePattern[i])
+        .fadeOut("fast")
+        .fadeIn("fast");
+      playSound(gamePattern[i]);
+      if (i == gamePattern.length - 1) {
         canClick = true;
-    }
+      }
     }, i * 400);
   }
 }
@@ -37,11 +37,11 @@ function nextSequence() {
   var randomChoosenColor = buttonColors[randomNumber];
   gamePattern.push(randomChoosenColor);
 
-//   $("#" + randomChoosenColor)
-//     .fadeOut("fast")
-//     .fadeIn("fast");
-//   playSound(randomChoosenColor);
-showPattern();
+  //   $("#" + randomChoosenColor)
+  //     .fadeOut("fast")
+  //     .fadeIn("fast");
+  //   playSound(randomChoosenColor);
+  showPattern();
   level++;
   $("#level-title").text("Level " + level);
 }
@@ -64,7 +64,7 @@ function checkAnswer(currentLevel) {
     setTimeout(function () {
       $("body").removeClass("game-over");
     }, 200);
-    $("#level-title").text("Game Over, Press any Keyboard key to restart!");
+    $("#level-title").text("Game Over, Press any Key to restart!");
     startOver();
   }
 
@@ -103,30 +103,39 @@ $(document).on("keydown", function (event) {
   }
 });
 
+$(document).on("keydown", function (event) {
+  if (!keyPressedOnce) {
+    $("#level-title").text("Ready...");
+    keyPressedOnce = true;
+    setTimeout(function () {
+      nextSequence();
+    }, 1000);
+  }
+});
+
 // For Help
 
-
-
 function showHelpModal() {
-    $('#help-modal').addClass('show');
-  }
-  
-  // Hide the modal
-  function hideHelpModal() {
-    $('#help-modal').removeClass('show');
-  }
-  
-  // For example, using a button to show/hide the modal
-  $('#help-button').on('click', function() {
-    let audio = new Audio("sounds/help.wav");
-    audio.play();
-    showHelpModal();
-  });
-  
-  // Close button inside the modal
-  $('#close-button').on('click', function() {
-    let audio = new Audio("sounds/close.wav");
-    audio.play();
-    hideHelpModal();
-  });
+  $("#help-modal").addClass("show");
+}
+
+// Hide the modal
+function hideHelpModal() {
+  $("#help-modal").removeClass("show");
+}
+
+// For example, using a button to show/hide the modal
+$("#help-button").on("click", function () {
+  let audio = new Audio("sounds/help.wav");
+  audio.play();
+  showHelpModal();
+});
+
+// Close button inside the modal
+$("#close-button").on("click", function () {
+  let audio = new Audio("sounds/close.wav");
+  audio.play();
+  hideHelpModal();
+});
+
 

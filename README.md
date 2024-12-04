@@ -108,6 +108,7 @@ This repository contains all the resources and mini projects I've completed whil
 -  We can also chain animations. Example: `$("h1").slideUp().slide(Down).animate({opacity:"50%"});` will first slide up h1, then slideDown, and then finally decreases the opacity to 50%.
 
 ### 4.1 The Simon Game
+- [Live Demo Here.](https://tangsang2003.github.io/the-simon-game)
 - Created the simon game, which is a memory game for remembering sequences.
 - Changed the implementation. In the bootcamp, only the latest button is given to remember at each new level, but I implemented in such a way that the whole sequence is given at each level.
 - Have used different jQuery concepts. 
@@ -115,4 +116,8 @@ This repository contains all the resources and mini projects I've completed whil
 - Also, made the game mobile friendly.
 - The whole game can be found [here](./jQuery/The%20Simon%20Game/).
 - Added detector for if the device accesing the game has touch screen available or not.
+
+## 5. The UNIX Command Line
+- All the basic commands and shortcuts needed to get started with UNIX command line is [here](./The-UNIX-command-line/UNIX-commands.md).
+
 

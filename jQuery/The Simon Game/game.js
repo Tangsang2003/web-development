@@ -16,19 +16,21 @@ function animatePress(currentColor) {
   }, 100);
 }
 
+const isTouchScreen = "ontouchstart" in window || navigator.maxTouchPoints > 0;
 let canClick = false;
 function showPattern() {
   canClick = false;
   for (let i = 0; i < gamePattern.length; i++) {
     setTimeout(function () {
-      $("#" + gamePattern[i])
-        .fadeOut("fast")
-        .fadeIn("fast");
       playSound(gamePattern[i]);
+      $("#" + gamePattern[i])
+        .fadeOut(100)
+        .fadeIn(100);
+
       if (i == gamePattern.length - 1) {
         canClick = true;
       }
-    }, i * 400);
+    }, i * 500);
   }
 }
 
@@ -64,7 +66,21 @@ function checkAnswer(currentLevel) {
     setTimeout(function () {
       $("body").removeClass("game-over");
     }, 200);
-    $("#level-title").text("Game Over, Press any Key to restart!");
+    // if (
+    //   navigator.userAgent.match(/Android/i) ||
+    //   navigator.userAgent.match(/webOS/i) ||
+    //   navigator.userAgent.match(/iPhone/i) ||
+    //   navigator.userAgent.match(/iPod/i) ||
+    //   navigator.userAgent.match(/BlackBerry/i) ||
+    //   navigator.userAgent.match(/Windows Phone/i)
+    // )
+    if (isTouchScreen) {
+      $("#level-title").text("Game Over, Press restart button to restart!");
+      $(".mobile-btn").text("Restart");
+      $(".mobile-btn").removeClass("hidden");
+    } else {
+      $("#level-title").text("Game Over, Press any Key to restart!");
+    }
     startOver();
   }
 
@@ -103,16 +119,6 @@ $(document).on("keydown", function (event) {
   }
 });
 
-$(document).on("keydown", function (event) {
-  if (!keyPressedOnce) {
-    $("#level-title").text("Ready...");
-    keyPressedOnce = true;
-    setTimeout(function () {
-      nextSequence();
-    }, 1000);
-  }
-});
-
 // For Help
 
 function showHelpModal() {
@@ -138,4 +144,25 @@ $("#close-button").on("click", function () {
   hideHelpModal();
 });
 
-
+// if (
+//   navigator.userAgent.match(/Android/i) ||
+//   navigator.userAgent.match(/webOS/i) ||
+//   navigator.userAgent.match(/iPhone/i) ||
+//   navigator.userAgent.match(/iPod/i) ||
+//   navigator.userAgent.match(/BlackBerry/i) ||
+//   navigator.userAgent.match(/Windows Phone/i)
+// )
+if (isTouchScreen) {
+  $("#level-title").text("Click on Start.");
+  $(".mobile-btn").removeClass("hidden");
+  $(".mobile-btn").on("click", function () {
+    if (!keyPressedOnce) {
+      keyPressedOnce = true;
+      $(".mobile-btn").addClass("hidden");
+      $("#level-title").text("Ready...");
+      setTimeout(function () {
+        nextSequence();
+      }, 1000);
+    }
+  });
+}

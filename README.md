@@ -114,4 +114,5 @@ This repository contains all the resources and mini projects I've completed whil
 - Also, added `help section` and `new sounds`.
 - Also, made the game mobile friendly.
 - The whole game can be found [here](./jQuery/The%20Simon%20Game/).
+- Added detector for if the device accesing the game has touch screen available or not.
 

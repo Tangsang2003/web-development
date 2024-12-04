@@ -57,6 +57,22 @@ body {
   background-color: grey;
 }
 
+.mobile-btn {
+  padding: 10px 15px;
+  background-color: #3469f0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hidden {
+  display: none;
+}
 #help-button {
   position: absolute;
   top: 20px;

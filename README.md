@@ -120,4 +120,34 @@ This repository contains all the resources and mini projects I've completed whil
 ## 5. The UNIX Command Line
 - All the basic commands and shortcuts needed to get started with UNIX command line is [here](./The-UNIX-command-line/UNIX-commands.md).
 
+## 6. Node.js
+- [Intro to Node](./intro-to-node/) `Node packages installation and a simple node program to generate random SuperHero and random superVillain name.`
+- `npm init` to initialize a node project.
+
+### 6.1 Expressjs
+- [Expressjs Documentation.](https://www.expressjs.com/)
+- How to start a server?
+```expressjs 
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get("/", function(req, res) {
+  res.send("<h1>Hello world! </h1>");
+})
+app.listen(port, function() {
+  console.log("Server started at port 3000!");
+});
+```
+- Installing `Nodemon`.
+`npm install -g nodemon`
+  - Nodemon is used to auto restart our server whenever there are any changes to our code.
+
+- [Our First Express Server.](./ExpressJS/my-express-server/)
+- The `__dirName` gives the directory of the current file in a server. This works whereever the file is.
+- The `body-parser` npm package is needed to access values that were sent during a POST.
+  - Always use `app.use(bodyParser.urlencoded({extended: true}));` while using body-parser.
+  - The option `extended: true`, allows for posting nested objects.
+- [A very simple calculator that only performs sum. Made using the get, post concepts of express.](./ExpressJS/Calculator/)
+- [A BMI Calculator using ExpressJS.](./ExpressJS/bmiCalculator/)
 

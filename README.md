@@ -151,3 +151,31 @@ app.listen(port, function() {
 - [A very simple calculator that only performs sum. Made using the get, post concepts of express.](./ExpressJS/Calculator/)
 - [A BMI Calculator using ExpressJS.](./ExpressJS/bmiCalculator/)
 
+## 7. Application Programming Interfaces (APIs)
+- Four main things: 
+  - Endpoints
+  - PATHS
+  - Parameters
+  - Authentication
+- Endpoints are like the first part of API. i.e. the main URL.
+- Paths are like branches that defined ahead of time where a user can go to from the endpoint. Example: `__URL__/dark-jokes`. Here `dark-jokes` is a path.
+  - There can be many different paths.
+- Parameters are like branches that can't be defined ahead of time. They are like parameters given for a query. For, example if we say we want a particular type of joke, then we can pass the type as parameter.
+  - The parameters usually follow `?` in the API URL.
+  - If more than one parameters, they are separated by `&`.
+
+### 7.1 A very very simple weather app using Node's native `https` package to integrate Open Weather API.
+- [Link.](./Application-Programming-Interface/weather-project-simple/)
+- Learnt about different response status Codes.
+- Refer to MDN docs to learn more about status codes.
+- We need to `JSON.parse(data)`, the data received from external API.
+  - The data received is in hexadecimal format and is stringified.
+  - So, parsing will coonvert it to JavaScript Object.
+- Also, `JSON.stringify(__JS__OBJECT)` can be used to stringify any JavaScript object.
+- There can be only one `res.send`, but there can be multiple `res.write`.
+
+### 7.2 NewsLetter SignUp
+- To use static files in our web application, we need to use, `app.use(express.static("public"));`. Then, we can specify the paths in our html file relative to the public folder.
+- To deploy on HEROKU, the port should be dynamic and given by: `process.env.PORT || 3000`.
+
+

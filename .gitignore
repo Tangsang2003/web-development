@@ -164,3 +164,6 @@ Notes.docx
 
 # Node
 node_modules/
+
+# VARIABLES
+VARIABLES.json

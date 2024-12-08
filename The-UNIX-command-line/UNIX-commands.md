@@ -3,6 +3,7 @@
 ## Basic UNIX commands
 - We can use `pwd` to get our current working directory.
 - The `ls` command lists all the files and folders in the directory we are currently in.
+- The `ls -a` command lists all the files including the hidden files as well.
 - The `cd` command can be used to change our current directory.
 - We can hold `alt` to move to a position with the mouse. Usually done when we have to edit a very long command.
 - `CTRL + A` to move to the beginning of the command and `CTRL + E` to move to the end of the command.

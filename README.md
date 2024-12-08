@@ -175,7 +175,13 @@ app.listen(port, function() {
 - There can be only one `res.send`, but there can be multiple `res.write`.
 
 ### 7.2 NewsLetter SignUp
+- [Code Here.](./Application-Programming-Interface/Newsletter-SignUp/)
 - To use static files in our web application, we need to use, `app.use(express.static("public"));`. Then, we can specify the paths in our html file relative to the public folder.
 - To deploy on HEROKU, the port should be dynamic and given by: `process.env.PORT || 3000`.
+
+
+## 8. Git, GitHub and Version Control
+- All the basic git commands and their explanations can be found [here.](./git-github-version-control/gitREADME.md)
+
 
 

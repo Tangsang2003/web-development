@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const date = require(__dirname + "/date.js");
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -7,31 +8,11 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 // Tasks lists
-tasksToDo = [];
+let tasksToDo = [];
 
 app.get("/", function (req, res) {
-  //   const dayNames = [
-  //     "Sunday",
-  //     "Monday",
-  //     "Tuesday",
-  //     "Wednesday",
-  //     "Thursday",
-  //     "Friday",
-  //     "Saturday",
-  //   ];
-  //   var today = new Date();
-  //   var todayNum = today.getDay();
 
-  const today = new Date();
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-  const kindOfDay = today.toLocaleDateString("en-EN", options);
-
-  //   var day = dayNames[todayNum];
+  let kindOfDay = date.getDate();
   res.render("list", { kindOfDay: kindOfDay, tasks: tasksToDo });
 });
 

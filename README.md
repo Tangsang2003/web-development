@@ -54,7 +54,7 @@ This repository contains all the resources and mini projects I've completed whil
 - [Random Number](./JavaScript/Intermediate%20JavaScript/random_number.js) `Math.random() and Math.floor()`.
 - [If Statements](./JavaScript/Intermediate%20JavaScript/if_statements.js) `'===' is different than '=='. ` `'===' also checks if the datatype is same or not.`
 - [Leap Year Challenge.](./JavaScript/Intermediate%20JavaScript/leap_year.js)
-- [Arrays](./JavaScript/Intermediate%20JavaScript/guest_list.js) `array_name.includes(varabile_name) to check if the variable exists in the array or not.`
+- [Arrays](./JavaScript/Intermediate%20JavaScript/guest_list.js) `array_name.includes(variable_name) to check if the variable exists in the array or not.`
 - [FizzBuzz](./JavaScript/Intermediate%20JavaScript/fizzbuzz.js) `A fun game. Usage of conditionals and operators.`
 - [FizzBuzz using While Loop.](./JavaScript/Intermediate%20JavaScript/while_fizzbuzz.js)
 - [99 Bottles of Beer on the Wall.](./JavaScript/Intermediate%20JavaScript/99_bottles_of_beer.js)
@@ -65,8 +65,8 @@ This repository contains all the resources and mini projects I've completed whil
 
 - It is basically a model that models a webpage in a tree structure.
   - The `head` and `body` are the children of `html` and the `html` is the child of document.
-  - We can select elements by different methods like `document.firstElementChild` for `html`, or `document.querySelector` or `document.getElementById`, `document.getElementsByClassName`, `document.querySelector` or `document.querySelectors` etc.
-  - `document.querySelector` (singular) selects only the first element that the query satisfies whereas `selectors` selects all the elements satisfying the query.
+  - We can select elements by different methods like `document.firstElementChild` for `html`, or `document.querySelector` or `document.getElementById`, `document.getElementsByClassName`, `document.querySelector` or `document.querySelectorAll` etc.
+  - `document.querySelector` (singular) selects only the first element that the query satisfies whereas `selectorAll` selects all the elements satisfying the query.
   - `document.querySelector("h1").classList.add("huge")`. This adds the class huge to the h1 element or the selected element. This is important for separation of concerns `structure, style, and behaviour.` This means that we can now just focus the styling on the `styles.css` and scripting on `index.js` instead of writing jS like `.style.color=''`.
   - `The Difference between innerHTML and textContent` is that the `innerHTML` will select all the HTML code that resides within the selected element. But the `textContent` will select only the text.
   - `querySelector("element_name").attributes` gives the list of attributes that has been specified for the element. `.getAttribute("attribute_name")` gives the value of the attribute and `.setAttribute("attribute_name")` sets the value of the attribute.
@@ -92,7 +92,7 @@ This repository contains all the resources and mini projects I've completed whil
 - Also, `hasClass("")` can be used to check if any class is present in an element or not. It returns a Boolean value.
 - The `.text("")` can be used to change the text of selected element.
   - Important to note that if multiple elements are present, it changes the text of all the selected elements.
-- The `.html*("")` can be used to change the innerHTML.
+- The `.html("")` can be used to change the innerHTML.
 - The `.attr("")` can be used to access any attribute.
   - It can also be used to change the value of the selected attribute. For example: `$("a").attr("href", "https://google.com")` will change the value of href of `<a>` to `google.com` from whatever it was before.
   - It can also be used to add classes since class is also an attribute of html elements.
@@ -127,7 +127,7 @@ This repository contains all the resources and mini projects I've completed whil
 ### 6.1 Expressjs
 - [Expressjs Documentation.](https://www.expressjs.com/)
 - How to start a server?
-```expressjs 
+```javascript 
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -183,5 +183,51 @@ app.listen(port, function() {
 ## 8. Git, GitHub and Version Control
 - All the basic git commands and their explanations can be found [here.](./git-github-version-control/gitREADME.md)
 
+
+## 9. EJS (Embedded JavaScript Templating)
+- It's like `Jinja2` for `Flask`.
+- [EJS Official website.](https://www.ejs.co/)
+- To use EJS: 
+  - We first use: `app.use("view engine", "ejs");` in our main app.
+  - Also, we need to create a `views` directory.
+  - Then, in the `__FILENAME__.ejs` inside the `views` directory, we create a template that we are going to use.
+  - The variables in that `.ejs` file is written as `<%= __VARIABLE_NAME__ %>`. This variable will be replaced by whatever is sent from our server using `res.render("__FILENAME__.ejs", __VARIABLE_NAME__: __COMPUTED_VARIABLE_NAME_FROM_OUR_SERVER)`.
+
+### 9.1 Running Code inside our EJS template
+- For Control Flow we use: `<% ____CODE____ %>`. This is called scriplet tag.
+- It should be added to every line of code that is not HTML. 
+- In template engines like EJS, the `else` must immediately follow the closing `%>` of the preceding if block, without an intervening `%>`. Example: 
+```html
+<body>
+  <% if (kindOfDay === "Sunday" || kindOfDay === "Saturday") { %>
+    <h1 style="color: purple"><%= kindOfDay %> List</h1>
+  <% } else { %>
+    <h1 style="color: blue"><%= kindOfDay %> List</h1>
+  <% } %>
+</body>
+``` 
+- The difference between `var` and `let` is that, a `var` defined inside a codeblock `{}` but not a function i.e. `inside if, else, for ,etc`, is a global variable. But, a `let` is not global but rather a `local` inside the block where it is defined. So is the case for `const` as well.
+- It is a good practice to use `let` or `const` as much as possible instead of `var`.
+
+- In express, usually a public folder is created to serve static files.
+- To use layouts `<%- include("__.ejs") -%>`
+
+### 9.2 Module Exports and Passing functions
+- In node, we can pass functions from module in two ways using `module.exports`.
+- If there is only a single function to be passed, then: `module.exports = __FUNCTION__NAME` is enough.
+- If there are multiple, then:
+```javascript
+module.exports = {
+  __FUNCTION_1__,
+  __FUNCTION_2__
+};
+```
+- In JavaScript, even if an array is constant, we can still push to the array, but can't reasign it to new array.
+
+
+### 9.3 Project: To do List `Version 1`
+
+- [Project Folder.](./to-do-list-v1/)
+-  A simple To do List using `EJS Templating` and `Layouts`.
 
 

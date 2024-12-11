@@ -2,6 +2,38 @@
 
 This repository contains all the resources and mini projects I've completed while learning about web development.
 
+## Table of Contents
+- [Web Development 🌐](#web-development-)
+  - [Table of Contents](#table-of-contents)
+  - [1. HTML](#1-html)
+    - [1.1 Introduction to HTML](#11-introduction-to-html)
+    - [1.2 Intermediate HTML](#12-intermediate-html)
+  - [2. CSS](#2-css)
+    - [2.1 Introduction to CSS](#21-introduction-to-css)
+    - [2.2 Intermediate CSS](#22-intermediate-css)
+  - [2.3 Bootstrap](#23-bootstrap)
+  - [3. JavaScript](#3-javascript)
+    - [3.1 Introduction to JavaScript](#31-introduction-to-javascript)
+    - [3.2 Intermediate JavaScript](#32-intermediate-javascript)
+    - [3.3 The Document Object Model](#33-the-document-object-model)
+    - [3.4 Boss Level Challenge](#34-boss-level-challenge)
+    - [3.5 Advanced JavaScript and DOM manipulation](#35-advanced-javascript-and-dom-manipulation)
+  - [4. jQuery](#4-jquery)
+    - [4.1 The Simon Game](#41-the-simon-game)
+  - [5. The UNIX Command Line](#5-the-unix-command-line)
+  - [6. Node.js](#6-nodejs)
+    - [6.1 Expressjs](#61-expressjs)
+  - [7. Application Programming Interfaces (APIs)](#7-application-programming-interfaces-apis)
+    - [7.1 A very very simple weather app using Node's native `https` package to integrate Open Weather API.](#71-a-very-very-simple-weather-app-using-nodes-native-https-package-to-integrate-open-weather-api)
+    - [7.2 NewsLetter SignUp](#72-newsletter-signup)
+  - [8. Git, GitHub and Version Control](#8-git-github-and-version-control)
+  - [9. EJS (Embedded JavaScript Templating)](#9-ejs-embedded-javascript-templating)
+    - [9.1 Running Code inside our EJS template](#91-running-code-inside-our-ejs-template)
+    - [9.2 Module Exports and Passing functions](#92-module-exports-and-passing-functions)
+    - [9.3 Project: To do List `Version 1`](#93-project-to-do-list-version-1)
+  - [10. A blog website using all the concepts learned till now. Version 1.](#10-a-blog-website-using-all-the-concepts-learned-till-now-version-1)
+    - [10.1 Express Routing Parameters](#101-express-routing-parameters)
+
 ## 1. HTML
 
 ### 1.1 Introduction to HTML
@@ -118,7 +150,7 @@ This repository contains all the resources and mini projects I've completed whil
 - Added detector for if the device accesing the game has touch screen available or not.
 
 ## 5. The UNIX Command Line
-- All the basic commands and shortcuts needed to get started with UNIX command line is [here](./The-UNIX-command-line/UNIX-commands.md).
+- All the basic commands and shortcuts needed to get started with UNIX command line is [here](./The-UNIX-command-line/README.md).
 
 ## 6. Node.js
 - [Intro to Node](./intro-to-node/) `Node packages installation and a simple node program to generate random SuperHero and random superVillain name.`
@@ -181,7 +213,7 @@ app.listen(port, function() {
 
 
 ## 8. Git, GitHub and Version Control
-- All the basic git commands and their explanations can be found [here.](./git-github-version-control/gitREADME.md)
+- All the basic git commands and their explanations can be found [here.](./git-github-version-control/README.md)
 
 
 ## 9. EJS (Embedded JavaScript Templating)
@@ -229,5 +261,28 @@ module.exports = {
 
 - [Project Folder.](./to-do-list-v1/)
 -  A simple To do List using `EJS Templating` and `Layouts`.
+
+## 10. A blog website using all the concepts learned till now. Version 1.
+
+- [Project Folder.](./personal-mini-blog/) `This is first version of the project.`
+
+### 10.1 Express Routing Parameters
+  ```javascript
+  app.get("/news/:topic", function(req, res) {
+    console.log(req.params.topic);
+  });
+  // Now, If I try to access localhost:3000/news/politics. then, it will log politics.
+  ```
+
+  - `Note: Use 'rs' to force restart nodemon server :)`
+  - In an array of objects in JavaScript, we can use two methods to find if there is any object satisfying some matching conditions or not. They are: 
+```javascript 
+foundObject = objectArrays.find(__object => __object.__key === "__value");
+// This will find the last object that has the value of __value for key of __key.
+// OR We can use:
+foundObject = objectArrays.filter(__object => __object.__key === "__value");
+// This will find all the objects matching the matching conditions.
+```
+
 
 

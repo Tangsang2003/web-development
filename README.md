@@ -33,6 +33,7 @@ This repository contains all the resources and mini projects I've completed whil
     - [9.3 Project: To do List `Version 1`](#93-project-to-do-list-version-1)
   - [10. A blog website using all the concepts learned till now. Version 1.](#10-a-blog-website-using-all-the-concepts-learned-till-now-version-1)
     - [10.1 Express Routing Parameters](#101-express-routing-parameters)
+  - [10. Databases](#10-databases)
 
 ## 1. HTML
 
@@ -284,5 +285,23 @@ foundObject = objectArrays.filter(__object => __object.__key === "__value");
 // This will find all the objects matching the matching conditions.
 ```
 
+## 10. Databases
+- SQL: Structured Query Language
+  - Example: MySQL, PostgreSQL
+  - Groups data into tables.
+  - Requires a schema.
+  - Can be inflexible.
+  - They are good at modeling relationships between entities.
+  - Relational databases.
+- NoSQL: Not only Structured Query Language
+  - Example: MongoDB, Redis
+  - Data represented as JSON objects.
+  - Document structure.
+  - Flexible to changes.
+  - Bit more flexible when storing different types of properties.
+  - But, they aren't good at relationships.
+  - Non Relational databases.
+  - When linking different entities, it might become inefficient than as compared to SQL.
+  - It is good in terms of scalability.
 
 

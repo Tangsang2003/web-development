@@ -34,6 +34,7 @@ This repository contains all the resources and mini projects I've completed whil
   - [10. A blog website using all the concepts learned till now. Version 1.](#10-a-blog-website-using-all-the-concepts-learned-till-now-version-1)
     - [10.1 Express Routing Parameters](#101-express-routing-parameters)
   - [10. Databases](#10-databases)
+    - [10.1 SQL](#101-sql)
 
 ## 1. HTML
 
@@ -304,4 +305,12 @@ foundObject = objectArrays.filter(__object => __object.__key === "__value");
   - When linking different entities, it might become inefficient than as compared to SQL.
   - It is good in terms of scalability.
 
+### 10.1 SQL
+- CRUD
+  - Create
+  - Read 
+  - Update
+  - Delete
+
+- Most commonly used SQL Queries can be found in this [README.](./SQL/README.md)
 

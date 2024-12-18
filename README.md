@@ -35,6 +35,8 @@ This repository contains all the resources and mini projects I've completed whil
     - [10.1 Express Routing Parameters](#101-express-routing-parameters)
   - [10. Databases](#10-databases)
     - [10.1 SQL](#101-sql)
+    - [10.2 MongoDB](#102-mongodb)
+      - [10.2.1 CRUD operations in MongoDB](#1021-crud-operations-in-mongodb)
 
 ## 1. HTML
 
@@ -314,3 +316,39 @@ foundObject = objectArrays.filter(__object => __object.__key === "__value");
 
 - Most commonly used SQL Queries can be found in this [README.](./SQL/README.md)
 
+### 10.2 MongoDB
+- How to setup? For `Windows`.
+  - Download and install.
+  - Also download MongoDB shell and unzip and place it inside `____/MongoDB/Server` directory.
+  - Go to C: and create a folder called `data` and inside `data/`, create another folder `db`.
+  - Go to your terminal.
+  - Go to your home directory with `cd ~`
+  - Make a hidden file. `touch .bash_profile`
+  - Then, `vim .bash_profile`
+  - Click `i` key to be able to edit in vim editor. i.e. `INSERT` mode.
+  - Then type
+  ```bash
+  alias mongod="/c/Program\ Files/MongoDB/Server/8.0/bin/mongod.exe"
+  alias mongo="/c/Program\ Files/MongoDB/Server/mongosh-2.3.7-win32-x64/bin/mongosh.exe" 
+  ```
+  - Hit `esc` to exit Insert mode. Then, type `:wq!`
+  - Then, in terminal execute `mongod`
+  - Start another terminal tab and execute `mongo` to run `mongo shell`.
+  - Use `help` in mongo shell for any help.
+
+#### 10.2.1 CRUD operations in MongoDB
+
+- Use the command `show dbs` to list all the available databases.
+- To create a new database:
+  - `use __DATABASE__NAME__`
+- Collections in MongoDB is like a table in SQL.
+- Documents are simply just a data row.
+So, 
+```bash
+  db.products.insertOne({_id: 1, name: "pen", price: 1.20})
+```
+Here, db will be any database that we are currently working on.
+- `products` is the collection.
+- If `products` don't exist, then the command will create it.
+- And the JavaScript Object that we have inserted is a `document`.
+- `show collections` command will show all the collections in the current database that we are working on.

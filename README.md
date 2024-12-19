@@ -37,6 +37,12 @@ This repository contains all the resources and mini projects I've completed whil
     - [10.1 SQL](#101-sql)
     - [10.2 MongoDB](#102-mongodb)
       - [10.2.1 CRUD operations in MongoDB](#1021-crud-operations-in-mongodb)
+        - [10.2.1.1 Create Operations](#10211-create-operations)
+        - [10.2.1.2 READ](#10212-read)
+        - [10.2.1.3 UPDATE](#10213-update)
+        - [10.2.1.4 DELETE](#10214-delete)
+      - [10.2.2 Relationships in MongoDB](#1022-relationships-in-mongodb)
+      - [10.2.3 Integrating MongoDB with Node.js application:](#1023-integrating-mongodb-with-nodejs-application)
 
 ## 1. HTML
 
@@ -338,6 +344,7 @@ foundObject = objectArrays.filter(__object => __object.__key === "__value");
 
 #### 10.2.1 CRUD operations in MongoDB
 
+##### 10.2.1.1 Create Operations
 - Use the command `show dbs` to list all the available databases.
 - To create a new database:
   - `use __DATABASE__NAME__`
@@ -352,3 +359,62 @@ Here, db will be any database that we are currently working on.
 - If `products` don't exist, then the command will create it.
 - And the JavaScript Object that we have inserted is a `document`.
 - `show collections` command will show all the collections in the current database that we are working on.
+
+##### 10.2.1.2 READ
+- `db.collection.find()` wll find all the documents in the collection.
+- `db.collection.find(query, projection)` will find the documents satisfying the query and projections are the fields that will be returned.
+  - Use documentation to read about different queries.
+  - Different query operators are available. Example: `$eq`, `$gt`, etc.
+  - Example: `db.products.find({name: "Pencil"})` will bring the documents that has the key-value of name: Pencil.
+  - `db.products.find({price: {$gt: 1}})` will find the documents that has price greater than 1.
+  - `db.products.find({price: {$gt: 1.0}}, {name: 1, id: 1})` will return only the name and id of the document that has price greater than 1.0.
+
+##### 10.2.1.3 UPDATE
+- `db.collection.updateOne(query, __WHAT_TO_ADD/UPDATE)`
+- `db.products.updateOne({_id: 1}, {$set: {stock: 12}})` will find the document in products having `_id` of 1 and then sets its stock value to 12, and if the stock value doesn't exist, then it will create it.
+
+##### 10.2.1.4 DELETE
+- `db.collectionName.deleteOne(filter_query)`
+- `db.collectionName.deleteMany()`
+- Example: `db.products.deleteOne({id: 2})` will delete the document having id of 2 from table `products`.
+
+#### 10.2.2 Relationships in MongoDB
+There are two main ways.
+1. Embedding documents inside a document.
+   - This is great for one-many relationships.
+
+Example:
+```javascript
+db.products.insertOne(
+  {
+    _id: 3, 
+    name: "Rubber", 
+    price: 2.3,
+    stock: 55,
+    reviews: [
+      {
+        author: "John", 
+        stars: 5,
+        review: "Wow! Awesome"
+      }, 
+      {
+        author: "Jane", 
+        stars: 4, 
+        review: "Great! But, can be improved!"
+      }
+    ]
+  }
+)
+ ```
+
+ 2. Referencing ids of documents.
+
+#### 10.2.3 Integrating MongoDB with Node.js application:
+We can integrate with either of the following two ways:
+- Using MongoDB native driver.
+  - Make a project directory.
+  - Inside the directory, `npm init -y`
+  - Then, `npm install mongodb`
+  - A basic application setup using native MongoDV driver can be found [here.](./fruits-project/app.js)
+- Using Object Document Mapper (Mongoose).
+

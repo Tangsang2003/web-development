@@ -43,6 +43,8 @@ This repository contains all the resources and mini projects I've completed whil
         - [10.2.1.4 DELETE](#10214-delete)
       - [10.2.2 Relationships in MongoDB](#1022-relationships-in-mongodb)
       - [10.2.3 Integrating MongoDB with Node.js application:](#1023-integrating-mongodb-with-nodejs-application)
+        - [10.2.3.1 Using MongoDB native driver.](#10231-using-mongodb-native-driver)
+        - [10.2.3.2 Using Object Document Mapper (Mongoose).](#10232-using-object-document-mapper-mongoose)
 
 ## 1. HTML
 
@@ -411,10 +413,66 @@ db.products.insertOne(
 
 #### 10.2.3 Integrating MongoDB with Node.js application:
 We can integrate with either of the following two ways:
-- Using MongoDB native driver.
+##### 10.2.3.1 Using MongoDB native driver.
   - Make a project directory.
   - Inside the directory, `npm init -y`
   - Then, `npm install mongodb`
   - A basic application setup using native MongoDV driver can be found [here.](./fruits-project/app.js)
-- Using Object Document Mapper (Mongoose).
+##### 10.2.3.2 Using Object Document Mapper (Mongoose).
+  - To connect to a MongoDB database, the code is:
+```javascript
+const mongoose = require('mongoose')
+mongoose.connect("mongodb://127.0.0.1/__DATABASE_NAME");
+// If the database with __DATABASE_NAME doesn't exist, then it will be created!
+```
+- Now, to add new data, we need a Mongoose Schema. Mongoose Schema is a blueprint for documents. It is defined as:
+```javascript
+  const fruitSchema = new mongoose.Schema({
+    name: String,
+    rating: Number,
+    review: String
+  });
+ ```
+ - Now, once the schema is defined, we use the schema and we define a model to interact with a collection.
+```javascript
+  const Fruit = mongoose.model('Fruit', fruitSchema)
+  // We need to use singular form 'Fruit' and not 'Fruits'.
+ ```
+ - Now, we can define a document like this:
+```javascript
+  const fruit = new Fruit({
+    name: "Apple",
+    rating: 5,
+    review: "An apple a day keeps a doctor away."
+  });
+ ```
+ - Now, finally we save the document to the database using:
+```javascript 
+fruit.save()
+```
+- If we need to save multiple documents at the same time then, we first create javascript objects that follows the schema. Let's say we have defined three objects: `cat, dog, petMongoose`.
+- Then, we save like this:
+```javascript
+  // Here, Animal is a model using animalSchema.
+  // The first parameter is the array of documents. 
+  // The second parameter is a callback function which can log errors if any.
+  Animal.insertMany([cat, dog, petMongoose]);
+```
+- To find documents in our database, we use:
+```javascript 
+// ModelName.find(query, projection)
+Person.find()
+  .then((documents) => {
+    console.log('All documents:');
+    console.log(documents); // Logs the array of documents
+    mongoose.connection.close(); // Close the connection
+  })
+  .catch((err) => {
+    console.error('Error finding documents:', err);
+    mongoose.connection.close();
+  });
+```
+- An application showing all of this is [here.](./fruits-project/mongoose-app.js)
+
+
 

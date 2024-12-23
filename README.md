@@ -473,6 +473,65 @@ Person.find()
   });
 ```
 - An application showing all of this is [here.](./fruits-project/mongoose-app.js)
+- We can also add data validation in Mongoose.
+```javascript 
+  const personSchema = new mongoose.Schema({
+    name: {
+      type: String,
+      required: [true, "Please check your data entry. No name has been specified."]
+      }
+    rating: {
+      type: Number,
+      min: 1,
+      max: 10
+    }, 
+    review: String
+  });
+```
+- An application showing data validation is [here.](./fruits-project/data-validation.js)
+- To update documents, we can do something like this:
+```javascript 
+  Fruit.updateOne({
+    name: 'Peach'
+},
+{
+    rating: 10
+}).then(()=>{
+    console.log("Updated successfully!");
+    mongoose.connection.close();
+}).catch(function(err){
+    if(err) {
+        console.log("Error Updating the document: ", err);
+    }
+});
+```
+- To Delete any document from a collection, we can use this:
+```javascript
+Fruits.deleteOne({name: 'Peach'});
+```
+- An application showcasing update and delete is [here.](./fruits-project/update_database.js)
+- To establish relationships in Mongoose, we can do something like this:
+```javascript 
+const personSchema = new mongoose.Schema({
+    name: String,
+    age: Number,
+    fav_fruit: fruitSchema
+});
+
+const Person = mongoose.model('Person', personSchema);
+
+john = new Person({
+    name: 'John Doe',
+    age: 37,
+    fav_fruit: newFruit
+});
+
+john.save().then(()=>{
+    mongoose.connection.close();
+});
+```
+- An application showcasing this is [here.](./fruits-project/realtionships.js)
+
 
 
 

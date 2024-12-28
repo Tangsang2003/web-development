@@ -45,6 +45,7 @@ This repository contains all the resources and mini projects I've completed whil
       - [10.2.3 Integrating MongoDB with Node.js application:](#1023-integrating-mongodb-with-nodejs-application)
         - [10.2.3.1 Using MongoDB native driver.](#10231-using-mongodb-native-driver)
         - [10.2.3.2 Using Object Document Mapper (Mongoose).](#10232-using-object-document-mapper-mongoose)
+    - [10.3 Upgrading To-Do-List-App](#103-upgrading-to-do-list-app)
 
 ## 1. HTML
 
@@ -533,5 +534,6 @@ john.save().then(()=>{
 - An application showcasing this is [here.](./fruits-project/realtionships.js)
 
 
-
+### 10.3 Upgrading To-Do-List-App
+- Using a MongoDB database to store tasks in the to do app.
 

@@ -33,14 +33,33 @@ const dishes = new Item({
 
 const defaultItems = [study, exercise, dishes]
 
-Item.insertMany(defaultItems).catch((err)=> {
-  console.log(err);
-})
+// Item.insertMany(defaultItems).catch((err)=> {
+//   console.log(err);
+// })
 
 app.get("/", function (req, res) {
 
   let kindOfDay = date.getDate();
-  res.render("list", { kindOfDay: kindOfDay, tasks: tasksToDo });
+  let tasksToDo = [];
+  Item.find().then((documents)=> {
+    if (documents.length === 0) {
+      return Item.insertMany(defaultItems).catch((err)=> {
+        console.log(err);
+      }).then(()=> {
+        res.redirect("/");
+      })
+      
+    }
+    documents.forEach((document)=> {
+      tasksToDo.push(document.name);
+      // console.log(document)
+    });
+    res.render("list", { kindOfDay: kindOfDay, tasks: tasksToDo });
+    
+  }).catch((err)=> {
+    console.error(err);
+  });
+  // res.render("list", { kindOfDay: kindOfDay, tasks: tasksToDo });
 });
 
 app.post("/", function (req, res) {

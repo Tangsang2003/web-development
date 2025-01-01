@@ -2,12 +2,16 @@
 <div class="box" id="heading"><h1><%= kindOfDay %></h1></div>
 
 <div class="box">
-  <% for (var i = 0; i < tasks.length; i++) { %>
-  <div class="item">
-    <input type="checkbox" />
-    <p><%= tasks[i] %></p>
-  </div>
-  <% } %>
+
+  <% tasks.forEach((task)=>{ %>
+    <div class = "item">
+      <input type="checkbox">
+      <p><%= task %></p>
+    </div>
+  <% }) %>
+    
+ 
+
 
   <form class="item" action="/" method="post">
     <input type="text" name="newItem" placeholder="New Task" required />

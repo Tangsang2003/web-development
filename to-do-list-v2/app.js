@@ -51,7 +51,7 @@ app.get("/", function (req, res) {
       
     }
     documents.forEach((document)=> {
-      tasksToDo.push(document.name);
+      tasksToDo.push(document);
       // console.log(document)
     });
     res.render("list", { kindOfDay: kindOfDay, tasks: tasksToDo });
@@ -69,6 +69,15 @@ app.post("/", function (req, res) {
   });
   item.save();
   res.redirect("/");
+});
+
+app.post("/delete", function(req, res) {
+  const checkedItemId = req.body.checkbox;
+  Item.deleteOne({_id: checkedItemId}).then(()=>{
+    res.redirect("/");
+  }).catch((err)=> {
+    console.log(err);
+  });
 });
 
 

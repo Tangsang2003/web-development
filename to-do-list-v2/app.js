@@ -63,9 +63,11 @@ app.get("/", function (req, res) {
 });
 
 app.post("/", function (req, res) {
-  task = req.body.newItem;
-  tasksToDo.push(task);
-
+  const itemName = req.body.newItem;
+  const item = new Item ({
+    name: itemName,
+  });
+  item.save();
   res.redirect("/");
 });
 

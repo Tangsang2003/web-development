@@ -89,13 +89,33 @@ app.get("/:customListName", function(req, res) {
 
 });
 
-app.post("/", function (req, res) {
+app.post("/", async function (req, res) {
   const itemName = req.body.newItem;
+  const listName = req.body.list;
   const item = new Item ({
     name: itemName,
   });
-  item.save();
-  res.redirect("/");
+  let kindOfDay = date.getDate();
+  if (listName === kindOfDay) {
+    try {
+      await item.save(); // Wait for the save operation to complete
+      res.redirect("/"); // Redirect after successful save
+  } catch (err) {
+      console.log(err); // Handle errors
+  }
+  } else {
+    List.findOne({name: listName}).then(function(doc) {
+      doc.items.push(item);
+      return doc.save();
+    }).then(function(){
+      res.redirect("/"+listName);
+    }).catch((err)=> {
+      console.log(err);
+    });
+  }
+  // item.save();
+  // res.redirect("/");
+
 });
 
 app.post("/delete", function(req, res) {

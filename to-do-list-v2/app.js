@@ -33,6 +33,13 @@ const dishes = new Item({
 
 const defaultItems = [study, exercise, dishes]
 
+const listSchema = mongoose.Schema({
+  name: String,
+  items: [itemSchema]
+});
+
+const List = new mongoose.model('List', listSchema);
+
 // Item.insertMany(defaultItems).catch((err)=> {
 //   console.log(err);
 // })
@@ -60,6 +67,26 @@ app.get("/", function (req, res) {
     console.error(err);
   });
   // res.render("list", { kindOfDay: kindOfDay, tasks: tasksToDo });
+});
+
+app.get("/:customListName", function(req, res) {
+  const customListName = req.params.customListName;
+  List.find({name: customListName}).then((documents)=>{
+    if (documents.length === 0) {
+      const list = new List({
+        name: customListName,
+        items: defaultItems
+      });
+      list.save();
+      res.redirect("/"+customListName);
+    }
+    else {
+      res.render("list", { kindOfDay: documents[0].name, tasks: documents[0].items });
+    }
+  }).catch((err)=> {
+    console.log(err);
+  });
+
 });
 
 app.post("/", function (req, res) {

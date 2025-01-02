@@ -536,4 +536,6 @@ john.save().then(()=>{
 
 ### 10.3 Upgrading To-Do-List-App
 - Using a MongoDB database to store tasks in the to do app.
+- We can use operators in MongoDB like `$pull`, `$pullAll`, etc, to directly update the database instead of looping through an array of items.
+- The version 2 of the to-do-app with database integration can be found [here.](./to-do-list-v2/)
 

@@ -1,7 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const date = require(__dirname + "/date.js");
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const _ = require("lodash");
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -69,24 +70,31 @@ app.get("/", function (req, res) {
   // res.render("list", { kindOfDay: kindOfDay, tasks: tasksToDo });
 });
 
-app.get("/:customListName", function(req, res) {
-  const customListName = req.params.customListName;
-  List.find({name: customListName}).then((documents)=>{
-    if (documents.length === 0) {
+app.get("/:customListName", async function(req, res) {
+  try {
+    const customListName = _.capitalize(req.params.customListName);
+
+    if (customListName === "Favicon.ico") {
+      return res.redirect("/");
+    }
+
+    let document = await List.findOne({name: customListName});
+
+    if(!document) {
       const list = new List({
         name: customListName,
         items: defaultItems
       });
-      list.save();
-      res.redirect("/"+customListName);
+      await list.save();
+      return res.redirect("/"+ customListName);
+    } else {
+      res.render("list", {kindOfDay: document.name, tasks: document.items});
     }
-    else {
-      res.render("list", { kindOfDay: documents[0].name, tasks: documents[0].items });
-    }
-  }).catch((err)=> {
-    console.log(err);
-  });
-
+  } catch(err) {
+    console.error("Error fetching/creating list:", err);
+    res.status(500).send("An error occurred.");
+  }
+    
 });
 
 app.post("/", async function (req, res) {
@@ -118,19 +126,49 @@ app.post("/", async function (req, res) {
 
 });
 
-app.post("/delete", function(req, res) {
+
+app.post("/delete", async function(req, res) {
   const checkedItemId = req.body.checkbox;
-  Item.deleteOne({_id: checkedItemId}).then(()=>{
-    res.redirect("/");
-  }).catch((err)=> {
-    console.log(err);
-  });
+  const listName = req.body.listName;
+  let kindOfDay = date.getDate();
+  if (listName === kindOfDay) {
+    Item.deleteOne({_id: checkedItemId}).then(()=>{
+      res.redirect("/");
+    }).catch((err)=> {
+      console.log(err);
+    });
+  } else {
+    List.findOneAndUpdate({name: listName}, {$pull: {items: {_id: checkedItemId}}}).then(()=>{
+      res.redirect("/" + listName);
+    }).catch((err)=> {
+      console.log(err);
+    });
+  }
+
 });
 
 
-app.post("/reset", function(req, res) {
-    tasksToDo = [];
-    res.redirect("/");
+app.post("/reset", async function(req, res) {
+
+  try{
+    const listName = req.body.listName;
+    let kindOfDay = date.getDate();
+    
+    if (listName === kindOfDay) {
+      await Item.deleteMany({});
+      res.redirect("/");
+    } else {
+      await List.updateOne(
+        {name: listName}, 
+        {$set: {items: []}}
+      );
+      res.redirect("/" + listName);
+    }
+  } catch(err) {
+      console.error("Error in /reset route:", err);
+      res.status(500).send("An error occurred while resetting the list.");
+  }
+
 });
 
 app.listen(3000, () => {

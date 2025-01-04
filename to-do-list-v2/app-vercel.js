@@ -5,6 +5,8 @@ const date = require(__dirname + "/date.js");
 const mongoose = require("mongoose");
 const _ = require("lodash");
 
+require("dotenv").config()
+
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
@@ -14,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 
 
-mongoose.connect("mongodb+srv://admin-Tangsang:kb6iOHQTjFVUDnmG@cluster0.xdir0.mongodb.net/toDoListDB");
+mongoose.connect(process.env.MONGODB_URI);
 
 const itemSchema = new mongoose.Schema({
   name: {

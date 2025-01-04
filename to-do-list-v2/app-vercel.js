@@ -1,18 +1,20 @@
 const express = require("express");
+const path = require("path")
 const bodyParser = require("body-parser");
 const date = require(__dirname + "/date.js");
 const mongoose = require("mongoose");
 const _ = require("lodash");
 
-require('dotenv').config();
-
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
-app.use(express.static("public"));
+// app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.set('views', path.join(__dirname, 'views'));
 
 
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect("mongodb+srv://admin-Tangsang:kb6iOHQTjFVUDnmG@cluster0.xdir0.mongodb.net/toDoListDB");
 
 const itemSchema = new mongoose.Schema({
   name: {
@@ -173,6 +175,8 @@ app.post("/reset", async function(req, res) {
 
 });
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000.");
-});
+// app.listen(3000, () => {
+//   console.log("Server is running on port 3000.");
+// });
+
+module.exports = app;

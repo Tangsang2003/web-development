@@ -46,6 +46,7 @@ This repository contains all the resources and mini projects I've completed whil
         - [10.2.3.1 Using MongoDB native driver.](#10231-using-mongodb-native-driver)
         - [10.2.3.2 Using Object Document Mapper (Mongoose).](#10232-using-object-document-mapper-mongoose)
     - [10.3 Upgrading To-Do-List-App](#103-upgrading-to-do-list-app)
+    - [11. Hosting a Web App Using Vercel and MongoDB Atlas](#11-hosting-a-web-app-using-vercel-and-mongodb-atlas)
 
 ## 1. HTML
 
@@ -538,4 +539,7 @@ john.save().then(()=>{
 - Using a MongoDB database to store tasks in the to do app.
 - We can use operators in MongoDB like `$pull`, `$pullAll`, etc, to directly update the database instead of looping through an array of items.
 - The version 2 of the to-do-app with database integration can be found [here.](./to-do-list-v2/)
+
+### 11. Hosting a Web App Using Vercel and MongoDB Atlas
+- The detailed procedure can be found [here.](./deploy-apps/)
 

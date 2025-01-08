@@ -48,6 +48,7 @@ This repository contains all the resources and mini projects I've completed whil
     - [10.3 Upgrading To-Do-List-App](#103-upgrading-to-do-list-app)
     - [11. Hosting a Web App Using Vercel and MongoDB Atlas](#11-hosting-a-web-app-using-vercel-and-mongodb-atlas)
     - [12. Upgrading Personal-Blog](#12-upgrading-personal-blog)
+    - [13. REST API](#13-rest-api)
 
 ## 1. HTML
 
@@ -547,6 +548,10 @@ john.save().then(()=>{
 ### 12. Upgrading Personal-Blog 
 - The personal blog project was updated to support a database.
 - The project folder can be found [here.](./personal-mini-blog-v2/)
+
+### 13. REST API
+- What is REST ? 
+- [Click Me.](./REST-API)
 
 
 

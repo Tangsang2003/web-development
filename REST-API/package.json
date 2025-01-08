@@ -1,0 +1,17 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "- RE: Representational\r - S: State\r - T: Transfer\r - It is an architectural style for building APIs.\r - Other examples: GraphQL, SOAP, FALCOR, etc.\r - Most Important rules: \r   - Use HTTP request verbs.\r   - Use specific pattern of routes/endpoint urls.\r - HTTP request verbs:\r   - GET, POST, PUT, PATCH, DELETE\r - GET is equivalent to READ\r - POST is equivalent to CREATE\r - PUT/PATCH is equivalent to UPDATE.\r - Difference between PUT/PATCH:\r   - Using PUT, we update using entire new document to replace the previous one.\r   - Using PATCH, we update only the broken parts.\r   - `Think of Bicycle analogy.`\r - DELETE is equivalent to DELETE.\r - Specific Patterns of routes/endpoints:",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tangsang",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.3"
+  }
+}

@@ -26,3 +26,4 @@
 ## 13.2 Building our own RESTful API:
 - First, we will create a database of articles.
 - Create a app.js file with all the initialization.
+- Use the table above to guide different routes.

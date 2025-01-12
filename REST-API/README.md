@@ -27,3 +27,7 @@
 - First, we will create a database of articles.
 - Create a app.js file with all the initialization.
 - Use the table above to guide different routes.
+- We can chain different route methods using `app.route()`
+- `%20` represents space in url encoding.
+
+- The completed REST API code is [here.](./app.js)

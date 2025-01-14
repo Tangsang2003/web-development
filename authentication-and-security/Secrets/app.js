@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const ejs = require("ejs");
 const bodyParser = require("body-parser");
@@ -15,7 +16,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 mongoose.connect("mongodb://127.0.0.1:27017/userDB");
 
-const secret = "ThisIsOurSecret.";
+const secret = process.env.SECRET;
 
 // USER SCHEMA
 const userSchema = new mongoose.Schema({

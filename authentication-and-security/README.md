@@ -28,3 +28,19 @@ const secret = process.env.VARIABLE_NAME;
 const md5 = require('md5');
 password = md5(password);
  ```
+
+### 14.4 Level 4 Salting and Hashing Passwords with Bcrypt
+- Dictionary attacks and hash table attacks (if simple hashing).
+
+#### 14.4.1 Salting
+- A random unit or characters is combined with the password and then hashed.
+- So, even the same passwords will have different hashes.
+- Mitigates rainbow table attacks.
+
+#### 14.4.2 Bcrypt
+- Industry standard Hashing algorithm.
+- Bcrypt has the concept of `salt rounds`.
+- Salt rounds means:
+  - In one round salt round, the password is added with a random salt and then the hash is generated.
+  - In two round, the generated hash from one round is again salted with the same salt and then hashed again.
+  - And so on.

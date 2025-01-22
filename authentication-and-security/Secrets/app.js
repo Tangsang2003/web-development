@@ -4,7 +4,9 @@ const ejs = require("ejs");
 const bodyParser = require("body-parser");
 const path = require("path");
 const mongoose = require("mongoose");
-const md5 = require("md5");
+const bcrypt = require("bcrypt");
+
+const saltRounds = 10;
 
 const app = express();
 // app.use(bodyParser.urlencoded({
@@ -40,11 +42,11 @@ app.get("/login", (req, res) => {
 
 app.post("/login", async(req, res)=> {
     const username = req.body.username;
-    const password = md5(req.body.password);
     try {
         const user = await User.findOne({email: username});
         if (user) {
-            if (user.password === password) {
+            const isMatch = await bcrypt.compare(req.body.password, user.password);
+            if (isMatch) {
                 res.render("secrets");
             }
             else {
@@ -67,9 +69,10 @@ app.route("/register")
   })
   .post(async (req, res) => {
     try {
+      const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
       const newUser = new User({
         email: req.body.username,
-        password: md5(req.body.password),
+        password: hashedPassword,
       });
       await newUser.save();
       res.render("secrets");

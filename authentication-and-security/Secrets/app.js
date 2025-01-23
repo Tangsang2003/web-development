@@ -1,12 +1,13 @@
-require('dotenv').config();
+require("dotenv").config();
 const express = require("express");
 const ejs = require("ejs");
 const bodyParser = require("body-parser");
 const path = require("path");
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
 
-const saltRounds = 10;
+const session = require("express-session");
+const passport = require("passport");
+const passportLocalMongoose = require("passport-local-mongoose");
 
 const app = express();
 // app.use(bodyParser.urlencoded({
@@ -16,6 +17,17 @@ app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use(
+  session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 mongoose.connect("mongodb://127.0.0.1:27017/userDB");
 
 const secret = process.env.SECRET;
@@ -23,12 +35,20 @@ const secret = process.env.SECRET;
 // USER SCHEMA
 const userSchema = new mongoose.Schema({
   email: String,
-  password: String
+  password: String,
 });
 
+userSchema.plugin(passportLocalMongoose);
 
 // USER MODEL
 const User = mongoose.model("User", userSchema);
+
+// Since we are using passport-local-mongoose
+// serializeUser and deserializeUser is for creating and destroying the session cookies
+
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // ROUTES
 
@@ -40,52 +60,75 @@ app.get("/login", (req, res) => {
   res.render("login");
 });
 
-app.post("/login", async(req, res)=> {
-    const username = req.body.username;
-    try {
-        const user = await User.findOne({email: username});
-        if (user) {
-            const isMatch = await bcrypt.compare(req.body.password, user.password);
-            if (isMatch) {
-                res.render("secrets");
-            }
-            else {
-                res.status(401).json({error: "Username and Passwords do not match!"});
-            }
-        }
-        else {
-            res.status(401).json({error: "User not found! Please register first."});
-        }
-
-    }catch(err) {
-        console.error(err);
-        res.status(500).json({message: err.message});
+app.post("/login", (req, res, next) => {
+  passport.authenticate("local", (err, user, info) => {
+    if (err) {
+      console.error(err);
+      return next(err);
     }
+
+    if (!user) {
+      return res.redirect('/login?error=Invalid credentials');
+    }
+
+    req.login(user, (err) => {
+      if (err) {
+        console.error(err);
+        return next(err);
+      }
+      return res.redirect("/secrets");
+    });  
+  })(req, res, next);
 });
 
-app.route("/register")
+app
+  .route("/register")
   .get((req, res) => {
     res.render("register");
   })
   .post(async (req, res) => {
     try {
-      const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
-      const newUser = new User({
-        email: req.body.username,
-        password: hashedPassword,
-      });
-      await newUser.save();
-      res.render("secrets");
+      const user = await User.register(
+        {
+          username: req.body.username,
+        },
+        req.body.password
+      );
 
+      req.login(user, (err) => {
+        if (err) {
+          console.error(err);
+          return res
+            .status(500)
+            .json({ error: "Internal Server Error", message: err.message });
+        }
+        res.redirect("/secrets");
+      });
     } catch (err) {
       console.error(err);
-      res.status(500).json({ error: "Internal Server Error! "});
+      res.status(500).json({
+        error: "Registration failed!",
+        message: err.message,
+      });
     }
   });
 
-// app.get("/register", (req, res)=> {
-//     res.render('register');
-// });
+app.get("/secrets", async (req, res) => {
+  if (req.isAuthenticated()) {
+    res.render("secrets");
+  }
+  else {
+    res.redirect("/login");
+  }
+})
+app.get("/logout", function(req, res, next) {
+  req.logout( (err) => {
+    if(err) {
+      return next(err);
+    }
+    res.redirect("/");
+  });
+});
 
 app.listen(3000, function () {
   console.log("Server started at port 3000.");

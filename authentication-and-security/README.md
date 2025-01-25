@@ -65,3 +65,23 @@ There are different types of cookies. Session cookies are one of them.
 - So, if we login to a particular website, then a session cookie is created so that even if we open up a new tab or close the current tab and go back to the website, we are already logged in. 
 - So, the server uses the session cookie to verify that we are already authenticated.
 - And, when we log out, then the session cookie will be destroyed. 
+
+### 14.6 Level 6: Third-party OAuth - Open Authorization
+- One of the biggest advantages is delegating the management of passwords to those big companies like Facebook.
+
+#### 14.6.1 Advantages: 
+- Granular level of access (Example: Asking for specific things like profile picture only from Facebook)
+- Read Only or Read/Write Access
+- Revoke access (deauthorize the website from access if user wants it).
+
+#### 14.6.2 Steps: 
+- Set up our app in the developer console of the third party OAuth apps like Google or Facebook. (This will give us with client id. Our website is the client.)
+- Redirect to Authenticate when the user tries to log in. 
+- User logs in. 
+- User reviews the permissions that we are asking. 
+- Our website then, will receive authorization code (if the user allows it. ) 
+- Now we let the user log in to our website. 
+- We (our website) can also optionally exchange authorization code for Access token which can be saved to the database for subsequent access if necessary. 
+- AuthCode are like one-time ticket whereas Access Token is like a year pass with priviliges. 
+- The guide for Google OAuth2.0 can be found [here.](https://www.passportjs.org/packages/passport-google-oauth20/)
+

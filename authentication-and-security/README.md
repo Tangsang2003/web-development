@@ -85,3 +85,6 @@ There are different types of cookies. Session cookies are one of them.
 - AuthCode are like one-time ticket whereas Access Token is like a year pass with priviliges. 
 - The guide for Google OAuth2.0 can be found [here.](https://www.passportjs.org/packages/passport-google-oauth20/)
 
+
+A complete `Secrets` project using the concepts of `Authentication and Security` can be found [here.](./Secrets/)
+

@@ -39,7 +39,8 @@ const secret = process.env.SECRET;
 const userSchema = new mongoose.Schema({
   email: String,
   password: String,
-  googleId: String
+  googleId: String, 
+  secret: String
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -78,7 +79,7 @@ passport.use(
       callbackURL: "http://localhost:3000/auth/google/secrets",
     },
     function (accessToken, refreshToken, profile, cb) {
-      console.log(profile);
+    //   console.log(profile);
       User.findOrCreate({ googleId: profile.id, username: profile.displayName }, function (err, user) {
         return cb(err, user);
       });
@@ -162,13 +163,48 @@ app
       });
     }
   });
+app.get("/submit", (req, res) => {
+  if (req.isAuthenticated()) {
+    res.render("submit");
+  } else {
+    res.redirect("login");
+  }
+});
+
+app.post("/submit", async (req, res) => {
+  const submittedSecret = req.body.secret;
+  // console.log(req.user)  Passport saves the logged user in the req.
+  try{
+    if(!req.user) {
+      return res.redirect("/login");
+    }
+    const user = await User.findById(req.user.id);
+    if(user) {
+      user.secret = submittedSecret;
+      await user.save();
+      res.redirect("/secrets");
+    }
+    else {
+      return res.status(404).send("User not found!");
+    }
+  } catch(err) {
+    console.error(err);
+    res.status(500).json({message: err.message});
+  }
+
+});
 
 app.get("/secrets", async (req, res) => {
-  if (req.isAuthenticated()) {
-    res.render("secrets");
-  } else {
-    res.redirect("/login");
+  const users = await User.find({"secret": {$ne:null}});
+  try {
+    if(users) {
+      return res.render("secrets", {usersWithSecrets: users});
+    }
+  }catch(err) {
+    console.error(err);
+    res.status(500).json({message: err.message});
   }
+  
 });
 app.get("/logout", function (req, res, next) {
   req.logout((err) => {

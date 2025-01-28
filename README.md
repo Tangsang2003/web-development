@@ -50,6 +50,7 @@ This repository contains all the resources and mini projects I've completed whil
     - [12. Upgrading Personal-Blog](#12-upgrading-personal-blog)
     - [13. REST API](#13-rest-api)
     - [14. Authentication and Security](#14-authentication-and-security)
+    - [15. React.JS](#15-reactjs)
 
 ## 1. HTML
 
@@ -557,5 +558,7 @@ john.save().then(()=>{
 ### 14. Authentication and Security
 - All the module files can be found [here.](./authentication-and-security/)
 
+### 15. React.JS
+- A dedicated directory for React can be found [here.](./reactjs/)
 
 

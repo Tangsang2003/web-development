@@ -2,6 +2,7 @@
 
 - [15. React.JS](#15-reactjs)
   - [15.1 Introduction to JSX and Babel](#151-introduction-to-jsx-and-babel)
+  - [15.2 JavaScript Expressions in JSX and ES6 Template Literals](#152-javascript-expressions-in-jsx-and-es6-template-literals)
 
 ---
 
@@ -22,4 +23,9 @@ What is React?
 - Babel converts any next generation javaScript code to a form/vanilla javaScript, that is understandable by all the browsers.
 - The starter code for any react app can be found [here.](./JSX-and-Babel/)
 - [Code Practice 1](./code-practice-1/index.js): A h1 title and three items in unordered list.
-- 
+
+## 15.2 JavaScript Expressions in JSX and ES6 Template Literals
+- [How to inject javaScript expressions inside HTML inside javaScript?](./javascript-expressions-and-es6-literals/index.js)
+- [Code Practice 2 ES6 Template Literals.](./javascript-expressions-and-es6-literals/code-practice-2-javascript-expressions/index.js) 
+
+

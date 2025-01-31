@@ -3,6 +3,7 @@
 - [15. React.JS](#15-reactjs)
   - [15.1 Introduction to JSX and Babel](#151-introduction-to-jsx-and-babel)
   - [15.2 JavaScript Expressions in JSX and ES6 Template Literals](#152-javascript-expressions-in-jsx-and-es6-template-literals)
+  - [15.3 JSX Attributes and Styling React Elements](#153-jsx-attributes-and-styling-react-elements)
 
 ---
 
@@ -28,4 +29,9 @@ What is React?
 - [How to inject javaScript expressions inside HTML inside javaScript?](./javascript-expressions-and-es6-literals/index.js)
 - [Code Practice 2 ES6 Template Literals.](./javascript-expressions-and-es6-literals/code-practice-2-javascript-expressions/index.js) 
 
+## 15.3 JSX Attributes and Styling React Elements
+- [How to add HTML attributes and CSS styling to react elements? ](./jsx-attributes-and-styling-react-elements/)
+  - [JavaScript / React code](./jsx-attributes-and-styling-react-elements/src/index.js)
+  - [HTML code](./jsx-attributes-and-styling-react-elements/public/index.html)
+  - [CSS code](./jsx-attributes-and-styling-react-elements/public/styles.css)
 

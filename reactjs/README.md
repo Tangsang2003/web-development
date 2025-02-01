@@ -34,4 +34,6 @@ What is React?
   - [JavaScript / React code](./jsx-attributes-and-styling-react-elements/src/index.js)
   - [HTML code](./jsx-attributes-and-styling-react-elements/public/index.html)
   - [CSS code](./jsx-attributes-and-styling-react-elements/public/styles.css)
+- [Inline Styling in JSX](./inline-styling-in-JSX/src/index.js)
+  - Remember to always use camelCase instead of kebab-case while defining CSS properties inside javascript object while passing for inline styling.
 

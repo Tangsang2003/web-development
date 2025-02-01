@@ -36,4 +36,8 @@ What is React?
   - [CSS code](./jsx-attributes-and-styling-react-elements/public/styles.css)
 - [Inline Styling in JSX](./inline-styling-in-JSX/src/index.js)
   - Remember to always use camelCase instead of kebab-case while defining CSS properties inside javascript object while passing for inline styling.
+- [React Styling Practice](./react-styling-practice/src/index.js)
+  - A `<h1>` is generated saying either Good Morning, Good Afternoon or Good Evening accordint to user's time.
+  - Inline styling is applied to color titles according to time.
+  - Style for the title has been added from stylesheet.
 

@@ -5,6 +5,7 @@
   - [15.2 JavaScript Expressions in JSX and ES6 Template Literals](#152-javascript-expressions-in-jsx-and-es6-template-literals)
   - [15.3 JSX Attributes and Styling React Elements](#153-jsx-attributes-and-styling-react-elements)
   - [15.4 ReactJS components](#154-reactjs-components)
+    - [15.4.1 ReactJS components Practice:](#1541-reactjs-components-practice)
 
 ---
 
@@ -49,3 +50,5 @@ What is React?
 - Then, by importing the components, it is like defining custom HTML elements, we can put them into our webpage structure in `ReactDom.render()`.
 - To make code even modular, instead of importing everything in `index.js`, we create an `App.jsx` that will import all the separate components and then sends the required components to the `index.js`, so that the whole page can be rendered with just `<App />`.
 
+### 15.4.1 ReactJS components Practice:
+- [Here](./react-components-practice/), we have divided the `React Styling Practice`'s code into components `Heading` and `App`.

@@ -6,6 +6,7 @@
   - [15.3 JSX Attributes and Styling React Elements](#153-jsx-attributes-and-styling-react-elements)
   - [15.4 ReactJS components](#154-reactjs-components)
     - [15.4.1 ReactJS components Practice:](#1541-reactjs-components-practice)
+    - [15.4.2 JavaScript ES6 Import, Export and Modules](#1542-javascript-es6-import-export-and-modules)
 
 ---
 
@@ -52,3 +53,10 @@ What is React?
 
 ### 15.4.1 ReactJS components Practice:
 - [Here](./react-components-practice/), we have divided the `React Styling Practice`'s code into components `Heading` and `App`.
+
+### 15.4.2 JavaScript ES6 Import, Export and Modules
+- Used to separate different functionalities into different files.
+- In ES6, we can directly use `import` and `export` instead of `modules.export`.
+- There can only be one default export from each file.
+- But, we can export multiple functions or constants from each file.
+- The implementation of importing different functions in [index.js](./es6-import-export-and-modules/src/index.js) from [math.js](./es6-import-export-and-modules/src/math.js).

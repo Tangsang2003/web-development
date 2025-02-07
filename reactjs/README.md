@@ -68,3 +68,8 @@ What is React?
 - We can pass custom values to the React component's function.
 - This can help us with dynamic react components instead of hard-coded ones.
 - [This](./react-props/src/index.js) shows how props can be used to create dynamic components.
+- [React Props Code Practice.](./react-props-code-practice/src/index.js)
+  - A contacts card page.
+  - [Dynamic Card Component using Props](./react-props-code-practice/src/components/Card.jsx)
+  - [Props passed from App.jsx](./react-props-code-practice/src/components/App.jsx)
+  - Imported Contacts from `contacts.js`.

@@ -7,6 +7,7 @@
   - [15.4 ReactJS components](#154-reactjs-components)
     - [15.4.1 ReactJS components Practice:](#1541-reactjs-components-practice)
     - [15.4.2 JavaScript ES6 Import, Export and Modules](#1542-javascript-es6-import-export-and-modules)
+  - [15.5 React Props](#155-react-props)
 
 ---
 
@@ -60,3 +61,10 @@ What is React?
 - There can only be one default export from each file.
 - But, we can export multiple functions or constants from each file.
 - The implementation of importing different functions in [index.js](./es6-import-export-and-modules/src/index.js) from [math.js](./es6-import-export-and-modules/src/math.js).
+
+
+## 15.5 React Props
+- They are react component's properties.
+- We can pass custom values to the React component's function.
+- This can help us with dynamic react components instead of hard-coded ones.
+- [This](./react-props/src/index.js) shows how props can be used to create dynamic components.

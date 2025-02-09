@@ -9,6 +9,7 @@
     - [15.4.2 JavaScript ES6 Import, Export and Modules](#1542-javascript-es6-import-export-and-modules)
   - [15.5 React Props](#155-react-props)
   - [15.6 React DevTools](#156-react-devtools)
+  - [15.7 Mapping Components](#157-mapping-components)
 
 ---
 
@@ -82,3 +83,11 @@ What is React?
 - It also helps us navigate the overall app structure.
 - We have broken down the `React Props Code Practice` code into sub-components by breaking the card compoenent into the `Avatar` component that contains image and `Detail` component that contains the details of the person in the card.
 - The code for components can be found [here.](./react-devtools/src/components/)
+
+## 15.7 Mapping Components
+- `contacts.map()` where contacts is a list/array, it will go through each contact and then apply the function that has been passed to `.map()`.
+- While using loops like this, each React component that needs to be rendered should have a unique `key`.
+- This `key` needs to be passed but it is not a prop.
+- The code demonstrating this concept can be found [here.](./mapping-components/).
+- Check [here](./mapping-components/src/components/App.jsx) how a new function has been created to render a card and how the mapping function has been used.
+- Check [here](./mapping-components/src/components/Card.jsx) how the key is not a prop.

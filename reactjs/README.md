@@ -8,6 +8,7 @@
     - [15.4.1 ReactJS components Practice:](#1541-reactjs-components-practice)
     - [15.4.2 JavaScript ES6 Import, Export and Modules](#1542-javascript-es6-import-export-and-modules)
   - [15.5 React Props](#155-react-props)
+  - [15.6 React DevTools](#156-react-devtools)
 
 ---
 
@@ -73,3 +74,11 @@ What is React?
   - [Dynamic Card Component using Props](./react-props-code-practice/src/components/Card.jsx)
   - [Props passed from App.jsx](./react-props-code-practice/src/components/App.jsx)
   - Imported Contacts from `contacts.js`.
+
+## 15.6 React DevTools
+- It helps in debugging React components.
+- It is an extension available for Chrome based browser and firefox.
+- It helps in identifying different props that are passed when creating multi-level compoents.
+- It also helps us navigate the overall app structure.
+- We have broken down the `React Props Code Practice` code into sub-components by breaking the card compoenent into the `Avatar` component that contains image and `Detail` component that contains the details of the person in the card.
+- The code for components can be found [here.](./react-devtools/src/components/)

@@ -11,6 +11,7 @@
   - [15.6 React DevTools](#156-react-devtools)
   - [15.7 Mapping Components](#157-mapping-components)
     - [15.7.1 Mapping Components Practice - Emojipedia](#1571-mapping-components-practice---emojipedia)
+    - [15.7.2 Map, Filter and Reduce](#1572-map-filter-and-reduce)
 
 ---
 
@@ -96,3 +97,12 @@ What is React?
 ### 15.7.1 Mapping Components Practice - Emojipedia
 - A emojipedia like webpage was created using the concepts learned during Mapping Components.
 - It can be found [here.](./mapping-components-practice/)
+
+### 15.7.2 Map, Filter and Reduce
+- `Map` applies some function to the specified array and then returns a new array that is created by applying that function. 
+- `Filter` creates or returns a new array that satisfies some condition.
+- `Reduce` accumulates a value by doing something to each item in an array or list. Example: Sum of all elements in the list.
+- `Find` finds the first element that satisfies the given condition. It doesn't loop through the entire loop if an element satisfying the given condition is already found.
+- `findIndex` on the other hand is similar to find but it returns the index of the element.
+-  [This](./map-filter-reduce/src/index-initial.js) contains the basics and definition of all the above terms.
+-  [This](./map-filter-reduce/src/index.js) contains practice code that imports a list from emojipedia and then creates a new list that has only the meaning of each emoji that is truncated to 100 characters.

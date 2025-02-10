@@ -10,6 +10,7 @@
   - [15.5 React Props](#155-react-props)
   - [15.6 React DevTools](#156-react-devtools)
   - [15.7 Mapping Components](#157-mapping-components)
+    - [15.7.1 Mapping Components Practice - Emojipedia](#1571-mapping-components-practice---emojipedia)
 
 ---
 
@@ -91,3 +92,7 @@ What is React?
 - The code demonstrating this concept can be found [here.](./mapping-components/).
 - Check [here](./mapping-components/src/components/App.jsx) how a new function has been created to render a card and how the mapping function has been used.
 - Check [here](./mapping-components/src/components/Card.jsx) how the key is not a prop.
+
+### 15.7.1 Mapping Components Practice - Emojipedia
+- A emojipedia like webpage was created using the concepts learned during Mapping Components.
+- It can be found [here.](./mapping-components-practice/)

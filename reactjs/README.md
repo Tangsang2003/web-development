@@ -14,6 +14,8 @@
     - [15.7.2 Map, Filter and Reduce](#1572-map-filter-and-reduce)
   - [15.8 Conditional Rendering with Ternary Operator and AND Operator](#158-conditional-rendering-with-ternary-operator-and-and-operator)
     - [15.8.1 Conditional Rendering Code Practice](#1581-conditional-rendering-code-practice)
+  - [15.9 Imperative V.S. Declarative Programming](#159-imperative-vs-declarative-programming)
+    - [15.9.1 React Hooks useState](#1591-react-hooks-usestate)
 
 ---
 
@@ -134,3 +136,19 @@ CONDITION ? DO IF TRUE : null
 - If user is registered, change the form to be a login form.
 - If user isn't registered, then modify the form to be a register form.
 - [Code can be found here.](./conditional-rendering-practice/src/)
+
+## 15.9 Imperative V.S. Declarative Programming
+- In React, declarative programming is the preferred paradigm, where you describe what the UI should look like and let React handle the details. 
+- Declarative Programming: Focuses on what you want the code to achieve without explicitly detailing how it should happen.
+- Imperative Programming: Focuses on the how by explicitly defining steps to achieve a result.
+- We can think of UI as a function of state.
+- We need hooks to tap/hook into state of UI/APP and modify it.
+
+### 15.9.1 React Hooks useState
+- ReactDOM.render() renders the HTML elements. So, if the elements contain any expressions, then only the initial expression is shown on the webpage. If the expressions are updated, but the page is not re-rendered, then there will be no changes on the page.
+- So, for that, we use Hooks. 
+- Hooks must be used inside a functional component. 
+- This means we have to use a function that creates a component and then we have to use hooks inside it.
+- Destructuring example: `const [red, gree, blue] = [9, 132, 114]`.
+- Now, console logging red gives 9.
+- An example showing the usage of `useState` hook is shown [here.](./usestate-hook/src/components/App.jsx)

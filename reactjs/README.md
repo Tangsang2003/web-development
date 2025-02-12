@@ -12,6 +12,7 @@
   - [15.7 Mapping Components](#157-mapping-components)
     - [15.7.1 Mapping Components Practice - Emojipedia](#1571-mapping-components-practice---emojipedia)
     - [15.7.2 Map, Filter and Reduce](#1572-map-filter-and-reduce)
+  - [15.8 Conditional Rendering with Ternary Operator and AND Operator](#158-conditional-rendering-with-ternary-operator-and-and-operator)
 
 ---
 
@@ -106,3 +107,24 @@ What is React?
 - `findIndex` on the other hand is similar to find but it returns the index of the element.
 -  [This](./map-filter-reduce/src/index-initial.js) contains the basics and definition of all the above terms.
 -  [This](./map-filter-reduce/src/index.js) contains practice code that imports a list from emojipedia and then creates a new list that has only the meaning of each emoji that is truncated to 100 characters.
+-  
+
+## 15.8 Conditional Rendering with Ternary Operator and AND Operator
+The ternary operator works like this: 
+```javaScript 
+CONDITION ? DO IF TRUE : DO IF FALSE
+// Example:
+// isRaining ? bringUmbrella : bringSunScreen;
+```
+- This ternary operator will convert if statements to expression so it can be used for conditional rendering in React JSX.
+- If we want to return nothing then we give null;
+``` javaScript
+CONDITION ? DO IF TRUE : null
+```
+- A better way to render will be using the AND operator like this:
+```javaScript
+  CONDITION && EXPRESSION
+  // The expression will be the code that needs to be rendered if the condition is true.
+  // This works because when left side is true then only the right side will be evaluated, if the left side is arealdy false then the right side won't be evaluated and hence won't be rendered.
+```
+- The examples are illustrated in the form of Login form [here.](./conditional-rendering/)

@@ -16,6 +16,7 @@
     - [15.8.1 Conditional Rendering Code Practice](#1581-conditional-rendering-code-practice)
   - [15.9 Imperative V.S. Declarative Programming](#159-imperative-vs-declarative-programming)
     - [15.9.1 React Hooks useState](#1591-react-hooks-usestate)
+    - [15.9.2 React useState hook practice](#1592-react-usestate-hook-practice)
 
 ---
 
@@ -152,3 +153,7 @@ CONDITION ? DO IF TRUE : null
 - Destructuring example: `const [red, gree, blue] = [9, 132, 114]`.
 - Now, console logging red gives 9.
 - An example showing the usage of `useState` hook is shown [here.](./usestate-hook/src/components/App.jsx)
+
+### 15.9.2 React useState hook practice
+- A simple digital clock was made using the concept of useState hook.
+- The source code can be found [here.](./usestate-hook-practice/src/components/App.jsx)

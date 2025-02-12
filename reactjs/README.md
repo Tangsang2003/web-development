@@ -13,6 +13,7 @@
     - [15.7.1 Mapping Components Practice - Emojipedia](#1571-mapping-components-practice---emojipedia)
     - [15.7.2 Map, Filter and Reduce](#1572-map-filter-and-reduce)
   - [15.8 Conditional Rendering with Ternary Operator and AND Operator](#158-conditional-rendering-with-ternary-operator-and-and-operator)
+    - [15.8.1 Conditional Rendering Code Practice](#1581-conditional-rendering-code-practice)
 
 ---
 
@@ -128,3 +129,8 @@ CONDITION ? DO IF TRUE : null
   // This works because when left side is true then only the right side will be evaluated, if the left side is arealdy false then the right side won't be evaluated and hence won't be rendered.
 ```
 - The examples are illustrated in the form of Login form [here.](./conditional-rendering/)
+### 15.8.1 Conditional Rendering Code Practice
+- A login and register page.
+- If user is registered, change the form to be a login form.
+- If user isn't registered, then modify the form to be a register form.
+- [Code can be found here.](./conditional-rendering-practice/src/)

@@ -18,6 +18,7 @@
     - [15.9.1 React Hooks useState](#1591-react-hooks-usestate)
     - [15.9.2 React useState hook practice](#1592-react-usestate-hook-practice)
   - [15.10 Array and Object Destructuring](#1510-array-and-object-destructuring)
+  - [15.11 Event Handling in React](#1511-event-handling-in-react)
 
 ---
 
@@ -183,3 +184,7 @@ const {name="Fluffy", sound} = cat; //Here, if the cat object has no property ca
 // Now, food will contain the value given by cat.feedingRequirements.food
 ```
 - A practice code example can be found [here.](./es6-destructuring/src/index.js)
+
+## 15.11 Event Handling in React
+- How are events like mouse click, mouse hover, etc handled using hooks?
+- [Here, in this example](./event-handling-in-react/src/components/App.jsx), a simple page has been built that changes the title when a button is clicked and the background color of the button changes on hover and when out of hover goes back to normal.

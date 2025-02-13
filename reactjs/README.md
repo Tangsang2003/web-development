@@ -19,6 +19,7 @@
     - [15.9.2 React useState hook practice](#1592-react-usestate-hook-practice)
   - [15.10 Array and Object Destructuring](#1510-array-and-object-destructuring)
   - [15.11 Event Handling in React](#1511-event-handling-in-react)
+  - [15.12 React Forms](#1512-react-forms)
 
 ---
 
@@ -188,3 +189,21 @@ const {name="Fluffy", sound} = cat; //Here, if the cat object has no property ca
 ## 15.11 Event Handling in React
 - How are events like mouse click, mouse hover, etc handled using hooks?
 - [Here, in this example](./event-handling-in-react/src/components/App.jsx), a simple page has been built that changes the title when a button is clicked and the background color of the button changes on hover and when out of hover goes back to normal.
+
+## 15.12 React Forms
+- When an element triggers events like `onClick`, `onChange`,etc, an object will be passed to the function specified. 
+```javaScript 
+// For example
+<input onChange={handleChange}/> // When there is change and handleChange is triggered.
+function handleChange(event) { // This event object is passed as well
+  console.log(event.target.value);
+  // event is the event that triggered the change.
+  // target is the component that triggered the chaange.
+  // Value is the value that is currenty in the target.
+  console.log(event.target.placeholder);
+}
+```
+- We use controlled components in React because it helps in better manipulation, management, real-time updates, validations, etc.
+- Using controlled components, React will have full control over the form elements' value instead of DOM storing it, so it will help in better debugging as well.
+- `event.preventDefault()` can be used to prevent the default behaviour on form submit.
+- An example code showcasing basic React forms, and how different events are handled inside the form can be found [here.](./react-forms/src/components/App.jsx)

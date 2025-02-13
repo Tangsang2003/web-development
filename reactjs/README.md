@@ -17,6 +17,7 @@
   - [15.9 Imperative V.S. Declarative Programming](#159-imperative-vs-declarative-programming)
     - [15.9.1 React Hooks useState](#1591-react-hooks-usestate)
     - [15.9.2 React useState hook practice](#1592-react-usestate-hook-practice)
+  - [15.10 Array and Object Destructuring](#1510-array-and-object-destructuring)
 
 ---
 
@@ -157,3 +158,28 @@ CONDITION ? DO IF TRUE : null
 ### 15.9.2 React useState hook practice
 - A simple digital clock was made using the concept of useState hook.
 - The source code can be found [here.](./usestate-hook-practice/src/components/App.jsx)
+
+## 15.10 Array and Object Destructuring
+```javaScript
+// If there is an array of objects of animals, we can destructure like this: 
+
+const [cat, dog] = animals; // This is under the assumption that animals is an array that has two objects. cat will now contain the first object, and dog the second.
+
+const {name, sound} = cat; // Now, since cat is an object, we destructure it like this.
+```
+- An important thing to note is that we can name the values anything while destructuring array but while destructuring objects, we have to name the variables that match with the object properties.
+- Or, if we want to name differently while destructuring object, we have to do it like this: 
+```javaScript 
+  const {name: catName, sound: catSound};
+```
+- To give default value to object: 
+```javaScript 
+const {name="Fluffy", sound} = cat; //Here, if the cat object has no property called name, then the default will be Fluffy.
+```
+- To destructure nested objects, we do something like this: 
+```javaScript 
+// Lets assume there is a nested object called feedingRequirements inside cat object
+{name, sound, feedingRequirements : {food, water}} = cat;
+// Now, food will contain the value given by cat.feedingRequirements.food
+```
+- A practice code example can be found [here.](./es6-destructuring/src/index.js)

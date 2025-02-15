@@ -20,6 +20,7 @@
   - [15.10 Array and Object Destructuring](#1510-array-and-object-destructuring)
   - [15.11 Event Handling in React](#1511-event-handling-in-react)
   - [15.12 React Forms](#1512-react-forms)
+    - [15.12.1 Handling Complex State in React](#15121-handling-complex-state-in-react)
 
 ---
 
@@ -207,3 +208,12 @@ function handleChange(event) { // This event object is passed as well
 - Using controlled components, React will have full control over the form elements' value instead of DOM storing it, so it will help in better debugging as well.
 - `event.preventDefault()` can be used to prevent the default behaviour on form submit.
 - An example code showcasing basic React forms, and how different events are handled inside the form can be found [here.](./react-forms/src/components/App.jsx)
+
+### 15.12.1 Handling Complex State in React
+- When we use `useState` hook, the initial state can be a javaScript object and not just string only.
+- When handling complex object and using the set functions, how do we handle different key-values of the objects when the same function is being invoked by different inputs to handle the change?
+- We will need access to previous key-values.
+- We can do that simply by passing a function to the set function `example: setFullName` function . The function that is being passed will have access to the previous state of the object or anything that is being changed.
+- Then the function will return the updated complex object with only the modified fields updated and all other values remaining intact.
+- Also, we need to note that we shouldn't directly use the `events` while updating the state because it is a synthetic event. It should be stored in a separate variable.
+- A complete code example showcasing the concepts above can be found [here.](./changing-complex-state/src/components/App.jsx)

@@ -217,3 +217,4 @@ function handleChange(event) { // This event object is passed as well
 - Then the function will return the updated complex object with only the modified fields updated and all other values remaining intact.
 - Also, we need to note that we shouldn't directly use the `events` while updating the state because it is a synthetic event. It should be stored in a separate variable.
 - A complete code example showcasing the concepts above can be found [here.](./changing-complex-state/src/components/App.jsx)
+- [Practice Code of Handling Complex State.](./changing-complex-state-practice/src/components/App.jsx)

@@ -21,6 +21,7 @@
   - [15.11 Event Handling in React](#1511-event-handling-in-react)
   - [15.12 React Forms](#1512-react-forms)
     - [15.12.1 Handling Complex State in React](#15121-handling-complex-state-in-react)
+  - [15.13 JavaScript ES6 Spread Operator](#1513-javascript-es6-spread-operator)
 
 ---
 
@@ -218,3 +219,41 @@ function handleChange(event) { // This event object is passed as well
 - Also, we need to note that we shouldn't directly use the `events` while updating the state because it is a synthetic event. It should be stored in a separate variable.
 - A complete code example showcasing the concepts above can be found [here.](./changing-complex-state/src/components/App.jsx)
 - [Practice Code of Handling Complex State.](./changing-complex-state-practice/src/components/App.jsx)
+
+## 15.13 JavaScript ES6 Spread Operator 
+- How do we combine two arrays in JavaScript?
+- We can iterate through one of the arrays and then push each item to another array.
+- But, a better approach would be to use javaScript spread operator which is simply `...`
+```javaScript
+// Example
+let veggies = ['potato', 'cauliflower'];
+let food = ['apple', 'banana'];
+// We can now combine like this simply:
+let foodOne = ['apple', 'banana', ...veggies];
+// We can insert the veggies in any position like: 
+let foodTwo = ['apple', ...veggies, 'banana'];
+```
+- We can also use the same concept in terms of object.
+```javaScript 
+// Example
+let fullName = {
+  fName: "James",
+  lName: "Bond"
+};
+let user = {
+  ...fullName,
+  username: "jamesbond007",
+  address: "Nepal"
+}
+```
+- The code above is not the same as just adding fullName. If we just add fullName, then the object will be added/nested inside user, but in the code above, the object `fullName` will be spread and only its contents are used in the `user` object.
+- Using the concept of ES6 Spread operator, the practice code of `handling complex state` has been modified like [this.](./es6-spread-operator/src/components/App.jsx)
+- In JavaScript, when you create an object, writing `{ name: "" }` will create a key literally named `"name"`, not using the value of the variable `name`. To use the value stored in the variable `name` as the key, you need to wrap it in square brackets. This syntax is known as *computed property names* in ES6. For example:
+
+```js
+const name = "firstName";
+const obj = {
+  [name]: ""  // This creates a key "firstName" with an empty string as its value.
+};
+```
+- Using `[name]` tells JavaScript to evaluate the variable and use its value as the key name.

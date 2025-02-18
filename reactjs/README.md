@@ -22,6 +22,7 @@
   - [15.12 React Forms](#1512-react-forms)
     - [15.12.1 Handling Complex State in React](#15121-handling-complex-state-in-react)
   - [15.13 JavaScript ES6 Spread Operator](#1513-javascript-es6-spread-operator)
+  - [15.14 To Do List App](#1514-to-do-list-app)
 
 ---
 
@@ -257,3 +258,6 @@ const obj = {
 };
 ```
 - Using `[name]` tells JavaScript to evaluate the variable and use its value as the key name.
+
+## 15.14 To Do List App
+- A new to do list app using the concepts of spread operator, map, useState hooks, can be found [here.](./es6-spread-operator-practice/src/components/App.jsx)

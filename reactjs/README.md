@@ -23,6 +23,7 @@
     - [15.12.1 Handling Complex State in React](#15121-handling-complex-state-in-react)
   - [15.13 JavaScript ES6 Spread Operator](#1513-javascript-es6-spread-operator)
   - [15.14 To Do List App](#1514-to-do-list-app)
+  - [15.15 Managing Component tree](#1515-managing-component-tree)
 
 ---
 
@@ -261,3 +262,26 @@ const obj = {
 
 ## 15.14 To Do List App
 - A new to do list app using the concepts of spread operator, map, useState hooks, can be found [here.](./es6-spread-operator-practice/src/components/App.jsx)
+
+## 15.15 Managing Component tree
+- In props, we can pass functions as well.
+- We can pass back from props from the child component to parent component too by creating a function.
+- For example: Let us consider the parent `App` component's function `deleteItem(id)` and child component's function `button onClick=`.
+```javaScript
+function deleteItem(id) {
+  console.log(id);
+}
+<ToDoItem onDone={deleteItem} key={index} id={index} />
+// Inside ToDoItem component: 
+function ToDoItem(props) {
+<button onClick={() => {
+  onDone(props.id);
+}}> ClickMe </button>
+// ...
+// return
+}
+```
+- [Here](./managing-a-component-tree/), we have modified the previous ToDoApp to handle completion of task.
+- When a task is completed and clicked, the task is deleted from the array in `App.jsx`.
+- Here, we have applied the concept of passing passing functions to child, and using the function and some value back from the child to edit the component in parent component. 
+- Check the [App.jsx](./managing-a-component-tree/src/components/App.jsx) and [ToDoItem.jsx](./managing-a-component-tree/src/components/ToDoItem.jsx) to see how it has been implemented.

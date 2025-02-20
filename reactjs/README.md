@@ -275,7 +275,7 @@ function deleteItem(id) {
 // Inside ToDoItem component: 
 function ToDoItem(props) {
 <button onClick={() => {
-  onDone(props.id);
+  props.onDone(props.id);
 }}> ClickMe </button>
 // ...
 // return
@@ -285,3 +285,8 @@ function ToDoItem(props) {
 - When a task is completed and clicked, the task is deleted from the array in `App.jsx`.
 - Here, we have applied the concept of passing passing functions to child, and using the function and some value back from the child to edit the component in parent component. 
 - Check the [App.jsx](./managing-a-component-tree/src/components/App.jsx) and [ToDoItem.jsx](./managing-a-component-tree/src/components/ToDoItem.jsx) to see how it has been implemented.
+- [Managing a Component Tree Practice Code](./managing-a-component-tree-practice/src/):
+  - [App.jsx](./managing-a-component-tree-practice/src/components/App.jsx)
+  - [InputArea.jsx](./managing-a-component-tree-practice/src/components/InputArea.jsx)
+  - [ToDoItem.jsx](./managing-a-component-tree-practice/src/components/ToDoItem.jsx)
+  - The input field and the add button has been separated into a new component and passing of functions using props, has been utilized. 
